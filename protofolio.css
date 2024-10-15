@@ -6,56 +6,38 @@ body {
     padding: 0;
     color: #333;
     line-height: 1.6;
-    scroll-behavior: smooth;
 }
 
 h1, h2, h3 {
     font-weight: bold;
-    color: #283593;
 }
 
 /* Navigation Styles */
 header {
     background-color: #283593;
     color: white;
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-header nav h1 {
-    font-size: 24px;
+    padding: 20px;
+    text-align: center;
 }
 
 header nav ul {
     list-style: none;
-    display: flex;
-    margin: 0;
+    padding: 0;
 }
 
 header nav ul li {
-    margin: 0 15px;
+    display: inline-block;
+    margin: 0 10px;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #ffc107;
+    text-decoration: underline;
 }
 
 /* Hero Section */
@@ -66,22 +48,27 @@ header nav ul li a:hover {
     padding: 80px;
     background-color: #1a237e;
     color: white;
+    flex-direction: column; /* لجعل العناصر فوق بعضها في الجوالات */
+}
+
+.hero-content {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .hero-content h2 {
-    font-size: 48px; /* تكبير حجم النص */
-    color: #ffc107; /* لون النص */
+    font-size: 32px; /* تصغير حجم الخط للجوال */
     margin-bottom: 10px;
 }
 
 .hero-content h3 {
-    font-size: 32px;
-    color: #ffca28; /* لون النص الفرعي */
+    font-size: 24px;
+    color: #ffc107;
     margin-bottom: 20px;
 }
 
 .hero-content p {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 20px;
 }
 
@@ -100,95 +87,110 @@ header nav ul li a:hover {
 
 /* Hero Image */
 .hero-image {
-    max-width: 350px; /* تكبير الصورة */
-    margin-left: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .profile-image {
-    width: 100%;
+    width: 80%; /* جعل الصورة أصغر في الجوال */
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
 
 /* About Section */
 .about {
-    padding: 80px 20px;
     background-color: #f4f4f9;
-    text-align: center; /* يجعل النصوص في المنتصف */
+    padding: 60px 20px; /* جعل القسم متسع قليلاً */
+    text-align: center; /* توسيط النص */
+}
+
+.about-container {
+    max-width: 800px; /* جعل العرض محدودا حتى يكون أكثر تنظيمًا */
+    margin: 0 auto;
 }
 
 .about h2 {
-    font-size: 42px;
+    font-size: 32px; /* ضبط حجم العنوان */
     color: #283593;
     margin-bottom: 20px;
 }
 
+.about h2 i {
+    color: #ffc107;
+    margin-left: 10px;
+}
+
 .about p {
-    font-size: 18px;
-    color: #333;
-    line-height: 1.8;
-    max-width: 700px;
-    margin: 0 auto 20px; /* يضع النص في المنتصف */
+    font-size: 18px; /* تحسين حجم الخط */
+    line-height: 1.8; /* تحسين التباعد بين السطور */
+    color: #555; /* استخدام لون رمادي لتحسين قراءة النص */
+    margin-bottom: 30px;
 }
 
 .about-btn {
     display: inline-block;
-    margin-top: 20px;
-    background-color: #ffc107;
-    color: #1a237e;
     padding: 12px 24px;
+    background-color: #283593; /* استخدام لون الخلفية */
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .about-btn:hover {
-    background-color: #ffca28;
-    transform: translateY(-5px);
+    background-color: #1a237e; /* تأثير التحويم */
+    transform: translateY(-3px);
+}
+
+/* Responsive Design for About Section */
+@media (min-width: 768px) {
+    .about h2 {
+        font-size: 36px; /* تكبير العنوان للشاشات الأكبر */
+    }
+    
+    .about p {
+        font-size: 20px; /* تكبير النص قليلاً للشاشات الأكبر */
+    }
+    
+    .about-container {
+        padding: 0 20px;
+    }
 }
 
 
 /* Projects Section */
 .projects {
-    padding: 80px 20px;
+    padding: 50px;
     background-color: #fff;
-    text-align: center;
 }
 
 .projects h2 {
-    font-size: 36px;
+    font-size: 28px;
     color: #283593;
+    text-align: center;
     margin-bottom: 40px;
 }
 
 .project-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .project-item {
     background-color: #e8eaf6;
     padding: 20px;
     border-radius: 10px;
-    width: 30%;
-    margin-bottom: 30px;
+    width: 100%; /* لجعل العنصر يمتد في عرض الشاشة */
+    margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .project-item img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    width: 100%; /* لجعل الصور مرنة */
+    height: auto;
 }
 
 .github-link {
@@ -204,38 +206,33 @@ header nav ul li a:hover {
 
 /* Certificates Section */
 .certificates {
-    padding: 80px 20px;
+    padding: 50px;
     background-color: #f4f4f9;
     text-align: center;
 }
 
 .certificates h2 {
-    font-size: 36px;
+    font-size: 28px;
     color: #283593;
     margin-bottom: 40px;
 }
 
 .certificate-list {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column; /* لجعل الشهادات في شكل عمودي */
+    justify-content: space-around;
 }
 
 .certificate-item {
-    width: 30%;
+    width: 100%;
     text-align: center;
     margin-bottom: 30px;
 }
 
 .certificate-image {
-    width: 80%;
+    width: 80%; /* لجعل الصور أصغر على الجوال */
     border-radius: 10px;
     margin-bottom: 10px;
-    transition: transform 0.3s;
-}
-
-.certificate-image:hover {
-    transform: scale(1.05);
 }
 
 .certificate-item p {
@@ -243,113 +240,35 @@ header nav ul li a:hover {
     margin-top: 5px;
 }
 
-.certificate-item a {
-    color: #1a237e;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.certificate-item a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background-color: #283593;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Animations */
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-content {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-    .hero-image {
-        max-width: 100%;
-    }
-    .about-container {
-        flex-direction: column;
-    }
-    .about-text,
-    .about-image {
-        max-width: 100%;
-    }
-    .project-item,
-    .certificate-item {
-        width: 100%;
-    }
-}
-
 /* Contact Section */
-.contact {
-    padding: 80px 20px;
-    background-color: #f4f4f9;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 36px;
-    color: #283593;
-    margin-bottom: 20px;
-}
-
 .contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact p {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
+    padding: 20px;
 }
 
 .contact-details p {
-    font-size: 18px;
-    margin: 15px 0;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
-.contact-details a {
-    color: #1a237e;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-details a:hover {
-    text-decoration: underline;
-}
-
-.contact-details i {
-    margin-right: 10px;
-    color: #283593;
-    font-size: 20px;
-}
-
-/* Footer */
-footer {
-    background-color: #283593;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
+/* Responsive Design */
+@media (min-width: 768px) {
+    /* تكبير العناصر على الشاشات الأكبر */
+    .hero {
+        flex-direction: row;
+    }
+    .hero-content h2 {
+        font-size: 42px;
+    }
+    .hero-content h3 {
+        font-size: 32px;
+    }
+    .profile-image {
+        width: 300px;
+    }
+    .project-item {
+        width: 30%;
+    }
+    .certificate-list {
+        flex-direction: row;
+    }
 }
