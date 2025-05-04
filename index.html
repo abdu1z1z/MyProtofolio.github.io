@@ -1,184 +1,1132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Portfolio of Abdulaziz, showcasing projects and certificates.">
-    <meta name="keywords" content="Portfolio, Projects, Certificates, AI, Data Analysis">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulaziz Portfolio</title>
+    <meta name="description" content="ملف أعمال عبدالعزيز الثبيتي - عالم بيانات ومبرمج متخصص في الذكاء الاصطناعي."> <meta name="keywords" content="عبدالعزيز الثبيتي, بورتفوليو, ملف أعمال, عالم بيانات, Data Scientist, مبرمج, Programmer, ذكاء اصطناعي, AI Engineer, تحليل بيانات, SQL, Power BI, تعلم الآلة, تعلم عميق, هاكاثون, BallVision, BallTrack, رؤية الحاسب, SCAI League, Flask, API"> <title>ملف أعمال عبدالعزيز الثبيتي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        /* --- Base Styles & Variables --- */
+        :root {
+            --primary-color: #2563eb; /* أزرق مميز */
+            --primary-darker: #1d4ed8; /* أزرق أغمق */
+            --secondary-color: #4b5563; /* رمادي داكن للنصوص الثانوية */
+            --light-gray: #f3f4f6; /* رمادي فاتح جدا للخلفيات */
+            --medium-gray: #e5e7eb; /* رمادي متوسط للحدود */
+            --dark-gray: #111827; /* رمادي غامق جدا للهيدر/الفوتر */
+            --white-color: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
 
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        html {
+             scroll-behavior: smooth;
+             scroll-padding-top: 70px; /* Adjust based on final header height */
+        }
 
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="protofolio.css">
+        body {
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.7;
+            color: var(--secondary-color);
+            background-color: var(--light-gray);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background: var(--dark-gray);
+            color: var(--white-color);
+            padding: 0.75rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            transition: background-color 0.3s ease;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-left: 1.5rem; /* Add padding for container */
+            padding-right: 1.5rem;
+            max-width: 1140px; /* Consistent width */
+            margin: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem; /* Slightly smaller */
+            color: var(--white-color);
+            font-weight: 700;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            align-items: center; /* Align items vertically */
+        }
+
+        header nav ul li {
+            margin-right: 1.25rem; /* Adjust spacing */
+        }
+         header nav ul li:last-child {
+             margin-right: 0;
+         }
+
+        header nav ul li a {
+            color: #d1d5db;
+            font-weight: 500;
+            padding: 0.75rem 0.5rem; /* Adjust padding */
+            border-bottom: 3px solid transparent;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            white-space: nowrap;
+            display: inline-block; /* Ensure padding works */
+        }
+
+        header nav ul li a:hover,
+        header nav ul li a.active {
+            color: var(--white-color);
+            border-bottom-color: var(--primary-color);
+        }
+        /* Language Toggle Button Style Updated */
+        #lang-toggle-btn {
+            background: none;
+            color: #d1d5db;
+            border: 1px solid #4b5563;
+            padding: 0.3rem 0.7rem; /* Smaller padding */
+            border-radius: 50%; /* Make it circular */
+            font-size: 0.9rem; /* Slightly larger font for single char */
+            font-weight: 700; /* Bolder */
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            margin-right: 1rem;
+            width: 32px; /* Fixed width */
+            height: 32px; /* Fixed height */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center; /* Center the character */
+            line-height: 1;
+        }
+        #lang-toggle-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white-color);
+            border-color: #6b7280;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url('/Users/abdulaziz/Desktop/MyProtofolio/artificial-intelligence-network-ai-line-circuit-technology-data-transfer-abstract-5g-network-background-illustration-video.jpg') no-repeat center center/cover;
+            color: var(--white-color);
+            padding: 8rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 0.75rem;
+            color: var(--white-color);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .hero .headline {
+             font-size: 1.1rem; /* Reduced size */
+             font-weight: 500;
+             color: #9ca3af;
+             margin-bottom: 2.5rem;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white-color);
+            padding: 0.8rem 2.2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-md);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero .btn:hover {
+            background: var(--primary-darker);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* --- Sections General Styling --- */
+        .section {
+            padding: 5rem 1.5rem;
+            background-color: var(--white-color);
+            margin-bottom: 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .section:last-of-type {
+             border-bottom: none;
+             margin-bottom: 0;
+        }
+        .section-alt-bg {
+             background-color: var(--light-gray);
+        }
+
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 4rem;
+            color: var(--dark-gray);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+         html[dir="ltr"] .section-title::after {
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+         }
+
+        /* --- About Section --- */
+        #about p {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+
+        /* --- Skills Section --- */
+        #skills .skills-grid, #soft-skills .skills-grid { /* Apply to both grids */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+        @media (min-width: 640px) {
+            #skills .skills-grid, #soft-skills .skills-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            #skills .skills-grid, #soft-skills .skills-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        #skills .skill-item, #soft-skills .skill-item { /* Apply to both cards */
+            background: var(--white-color);
+            padding: 1.5rem 1rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        #skills .skill-item:hover, #soft-skills .skill-item:hover {
+             transform: translateY(-4px);
+             box-shadow: var(--shadow-md);
+        }
+        #skills .skill-item i, #soft-skills .skill-item i { /* Apply to both icons */
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+         #skills .skill-item:hover i, #soft-skills .skill-item:hover i {
+             color: var(--primary-darker);
+         }
+        #skills .skill-item h4, #soft-skills .skill-item h4 { /* Apply to both titles */
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+         /* Specific style for soft skill description */
+         #soft-skills .skill-item p {
+             font-size: 0.85rem;
+             color: var(--secondary-color);
+             margin-top: 0.5rem;
+             min-height: 40px; /* Ensure consistent height */
+         }
+
+
+        /* --- Projects Section --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--white-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+             border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-card-content {
+            padding: 1.8rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--primary-darker);
+            font-size: 1.3rem;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+             margin-bottom: 1rem;
+        }
+
+        .project-tags span {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem; /* Keep margin-right for RTL */
+            margin-left: 0.5rem; /* Add margin-left for LTR */
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        html[dir="ltr"] .project-tags span {
+             margin-right: 0;
+             margin-left: 0.5rem;
+        }
+
+
+        .project-links a {
+            margin-right: 1rem; /* Keep margin-right for RTL */
+            margin-left: 1rem; /* Add margin-left for LTR */
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            display: inline-flex; /* Use inline-flex for icon alignment */
+            align-items: center; /* Align icon vertically */
+            margin-top: 1rem;
+        }
+        html[dir="ltr"] .project-links a {
+             margin-right: 0;
+             margin-left: 1rem;
+        }
+
+         .project-links a i {
+             margin-right: 0.3rem; /* Keep margin-right for RTL */
+             margin-left: 0.3rem; /* Add margin-left for LTR */
+         }
+          html[dir="ltr"] .project-links a i {
+             margin-right: 0;
+             margin-left: 0.3rem;
+         }
+
+         .project-links a:last-child {
+             margin-right: 0;
+             margin-left: 0;
+         }
+         /* ✅ Add space after video/github icon */
+         .project-links a i.fa-video,
+         .project-links a i.fa-github {
+             margin-left: 0.5rem; /* Adjust space as needed for RTL */
+         }
+         html[dir="ltr"] .project-links a i.fa-video,
+         html[dir="ltr"] .project-links a i.fa-github {
+             margin-left: 0;
+             margin-right: 0.5rem; /* Adjust space as needed for LTR */
+         }
+
+
+        /* --- Certifications Section --- */
+        .timeline-list { /* Renamed class for clarity */
+            list-style: none;
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+            padding: 1rem 0;
+        }
+        /* Add a timeline line */
+        .timeline-list::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 14px; /* Position relative to the start in RTL */
+            left: auto;
+            width: 2px;
+            background-color: var(--medium-gray);
+        }
+        html[dir="ltr"] .timeline-list::before {
+            left: 14px;
+            right: auto;
+        }
+
+        .timeline-item { /* Renamed class */
+            background: var(--white-color);
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem; /* Increased spacing */
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            padding-right: 45px; /* Space for icon in RTL */
+            padding-left: 1.5rem; /* Default padding */
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.3s ease;
+        }
+         html[dir="ltr"] .timeline-item {
+            padding-left: 45px;
+            padding-right: 1.5rem;
+         }
+
+        .timeline-item::before { /* Timeline dot */
+            content: '';
+            position: absolute;
+            top: 1.8rem; /* Adjust vertical position */
+            right: 8px; /* Position icon relative to start in RTL */
+            left: auto;
+            width: 15px;
+            height: 15px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid var(--white-color);
+            z-index: 1;
+        }
+         html[dir="ltr"] .timeline-item::before {
+            left: 8px;
+            right: auto;
+         }
+
+        .timeline-item strong {
+            display: block;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+        .timeline-item span {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        .timeline-item a.cert-link {
+             font-size: 0.85rem;
+             color: var(--primary-color);
+             text-decoration: underline;
+             display: inline-block; /* Allow margin */
+             margin-top: 0.5rem;
+         }
+
+
+        /* --- Contact Section --- */
+        #contact p {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+        .contact-links {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .contact-links a {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            padding: 0.6rem 1.2rem; /* Adjust padding */
+            border: 1px solid var(--border-color);
+            border-radius: 25px; /* More rounded */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            display: inline-flex; /* Align icon and text */
+            align-items: center;
+            background-color: var(--white-color);
+        }
+         .contact-links a i { /* Style for icons inside contact links */
+             margin-right: 0.5rem; /* Space between icon and text for RTL */
+             margin-left: 0;
+             font-size: 1.1rem; /* Adjust icon size */
+         }
+         html[dir="ltr"] .contact-links a i {
+             margin-right: 0;
+             margin-left: 0.5rem;
+         }
+
+        .contact-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--dark-gray);
+            color: #9ca3af;
+            text-align: center;
+            padding: 2rem 0; /* Adjust padding */
+            margin-top: 3rem;
+        }
+
+        /* --- Responsive Design Adjustments --- */
+        @media (max-width: 768px) {
+            html { scroll-padding-top: 60px; } /* Adjust scroll padding */
+            header .container { flex-direction: column; text-align: center; }
+            header h1 { margin-bottom: 0.5rem; }
+            header nav ul { justify-content: center; margin-top: 0.5rem; }
+            header nav ul li { margin: 0 0.5rem; }
+            #lang-toggle-btn { margin-top: 0.5rem; margin-right: 0; } /* Adjust button margin on small screens */
+            .hero { padding: 6rem 1rem; }
+            .hero h2 { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
+            .section { padding: 3.5rem 1rem; }
+            .section-title { font-size: 2rem; margin-bottom: 3rem; }
+            .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .timeline-item { padding: 1.2rem; padding-right: 35px; }
+            html[dir="ltr"] .timeline-item { padding-left: 35px; padding-right: 1.2rem; }
+            .timeline-item strong { margin-left: 0; }
+             .timeline-list::before { right: 10px; }
+             html[dir="ltr"] .timeline-list::before { left: 10px; right: auto; }
+             .timeline-item::before { right: 4px; width: 12px; height: 12px; }
+             html[dir="ltr"] .timeline-item::before { left: 4px; right: auto; }
+            .contact-links a { margin: 0.5rem 0.5rem; }
+            #skills .skills-grid, #soft-skills .skills-grid { grid-template-columns: repeat(2, 1fr); } /* 2 columns on smaller screens */
+        }
+         @media (max-width: 480px) {
+             header h1 { font-size: 1.4rem;}
+             header nav ul li a { font-size: 0.85rem; padding: 0.5rem 0.2rem;}
+             .hero { padding: 5rem 1rem;}
+             .hero h2 { font-size: 1.8rem;}
+             .hero p { font-size: 1rem;}
+             .hero .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem;}
+             .section-title { font-size: 1.8rem;}
+             .project-card-content { padding: 1.2rem;}
+             .project-card h3 { font-size: 1.15rem;}
+             .timeline-item strong { font-size: 1.1rem;}
+             .timeline-item span { font-size: 0.85rem;}
+             #skills .skills-grid, #soft-skills .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem;} /* Keep 2 columns */
+             #skills .skill-item i, #soft-skills .skill-item i { font-size: 2rem;}
+             #skills .skill-item h4, #soft-skills .skill-item h4 { font-size: 1rem;}
+         }
+
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>Abdulaziz Al-Thobaiti</h1>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">عبدالعزيز الثبيتي</div>
+            <nav>
+                <ul>
+                    <li><button id="lang-toggle-btn" data-translate-key="langToggle">EN</button></li>
+                    <li><a href="#about" class="active" data-translate-key="navAbout">نبذة عني</a></li>
+                    <li><a href="#skills" data-translate-key="navSkills">المهارات</a></li>
+                    <li><a href="#soft-skills" data-translate-key="navSoftSkills">الكفاءات</a></li>
+                    <li><a href="#projects" data-translate-key="navProjects">المشاريع</a></li>
+                    <li><a href="#education" data-translate-key="navEducation">التعليم</a></li>
+                    <li><a href="#certifications" data-translate-key="navCerts">الشهادات</a></li>
+                    <li><a href="#contact" data-translate-key="navContact">تواصل معي</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero" class="hero">
-        <h2>Hello, I'm Abdulaziz</h2>
-        <h3>AI & Data Analyst</h3>
-        <a href="BestResum1_page-0001.jpg" class="resume-btn">Resume</a>
+        <div class="container">
+             <h2 data-translate-key="heroName">عبدالعزيز الثبيتي</h2>
+             <p class="headline" data-translate-key="heroTitle">Data Scientist | Programmer</p> <a href="/Users/abdulaziz/Desktop/MyProtofolio/BestResume3.pdf" download class="btn" data-translate-key="heroResumeBtn">تحميل السيرة الذاتية</a>
+        </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>
-                I am a passionate AI & Data Analyst with a strong foundation in computer programming and advanced analytics. 
-                After graduating with honors from the Institute of Public Administration, I honed my skills further by completing 
-                two intensive boot camps in Data Science and Artificial Intelligence, provided by SDAIA and Tuwaiq Academy.
-            </p>
-            <p>
-                My expertise lies in leveraging tools like SQL, Power BI, and Python to extract actionable insights from data, 
-                enabling informed decision-making and innovative solutions.
-            </p>
-            <p>
-                I am committed to continuous learning and contributing to impactful projects that transform data into valuable insights.
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-translate-key="aboutTitle">نبذة عني</h2>
+            <p data-translate-key="aboutP1">
+                خريج برمجة حاسب بخلفية تقنية قوية، مهتم في الذكاء الاصطناعي ولدي خبرة عملية في تنفيذ أكثر من 10 مشاريع متخصصة في تحليل البيانات، تطوير النماذج، وتطبيق تقنيات التعلم الآلي والرؤية الحاسوبية لحل مشكلات عملية. عززت خبرتي الأكاديمية من خلال إتمام معسكرين تدريبيين مكثفين في علوم البيانات والذكاء الاصطناعي مقدمة من الهيئة السعودية للبيانات والذكاء الاصطناعي (SDAIA) وأكاديمية طويق. أؤمن بأن القيمة الحقيقية للذكاء الاصطناعي تكمن في تحويل البيانات إلى أدوات لفهم أعمق واتخاذ قرارات أدق، وأسعى دائمًا للجمع بين التفكير الهندسي والابتكار العملي لصناعة حلول ذكية تحدث فارقًا حقيقيًا.
             </p>
         </div>
     </section>
-    
-    
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-list">
-            <!-- Plant Project -->
-            <div class="project-item">
-                <img src="DGhirasr.jpg" alt="AI Image Classifier" class="project-image">
-                <h3>AI Image Classifier</h3>
-                <p>Classify plants into over 30 categories with detailed descriptions and locations in Saudi Arabia.</p>
-                <div class="project-options">
-                    <a href="https://youtube.com/shorts/kgzhjyqbxEg?feature=share" target="_blank" class="option-btn demo-btn">🎥 Demo Video</a>
-                    <a href="https://github.com/abdu1z1z/GhirasSwiftAI" target="_blank" class="option-btn github-btn">🔗 GitHub</a>
+
+    <section id="skills" class="section section-alt-bg">
+        <div class="container">
+            <h2 class="section-title" data-translate-key="skillsTitle">المهارات التقنية</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h4 data-translate-key="skillPython">Python</h4>
                 </div>
-            </div>
-    
-            <!-- Ball Project -->
-            <div class="project-item">
-                <img src="DBALLjpg.jpg" alt="Ball Tracer" class="project-image">
-                <h3>Ball Tracer</h3>
-                <p>Track and analyze football match ball movements using YOLO for possession and performance metrics.</p>
-                <div class="project-options">
-                    <a href="https://youtu.be/AdmeCwx5P7Q" target="_blank" class="option-btn demo-btn">🎥 Demo Video</a>
-                    <a href="https://github.com/abdu1z1z/TrackBall" target="_blank" class="option-btn github-btn">🔗 GitHub</a>
+                 <div class="skill-card">
+                    <i class="fas fa-brain"></i>
+                    <h4 data-translate-key="skillML">تعلم الآلة</h4>
                 </div>
-            </div>
-    
-            <!-- Movie Project -->
-            <div class="project-item">
-                <img src="DMovie.jpg" alt="Movie Recommendation System" class="project-image">
-                <h3>Movie Recommendation System</h3>
-                <p>Provide personalized movie suggestions using machine learning algorithms based on user preferences and viewing history.</p>
-                <div class="project-options">
-                    <a href="https://youtu.be/XpCvjG3zD0w" target="_blank" class="option-btn demo-btn">🎥 Demo Video</a>
-                    <a href="https://github.com/abdu1z1z/RecommendSystem" target="_blank" class="option-btn github-btn">🔗 GitHub</a>
+                 <div class="skill-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h4 data-translate-key="skillDL">التعلم العميق</h4>
                 </div>
-            </div>
-    
-            <!-- Loan Project -->
-            <div class="project-item">
-                <img src="DLoan.jpg" alt="Loan Status Prediction" class="project-image">
-                <h3>Loan Status Prediction</h3>
-                <p>Build a machine learning model to predict loan status (approved or rejected) based on historical data.</p>
-                <div class="project-options">
-                    <a href="https://github.com/abdu1z1z/LoanStatusBldModl" target="_blank" class="option-btn github-btn">🔗 GitHub</a>
+                 <div class="skill-card">
+                    <i class="fas fa-eye"></i> <h4 data-translate-key="skillCV">رؤية الحاسب</h4>
                 </div>
-            </div>
-    
-            <!-- Fire Project -->
-            <div class="project-item">
-                <img src="DFIRE.jpg" alt="Fire Data Analysis" class="project-image">
-                <h3>Fire Data Analysis</h3>
-                <p>Analyze forest fire trends using predictive models for weather indices and risk factors.</p>
-                <div class="project-options">
-                    <a href="https://github.com/abdu1z1z/FireEDA" target="_blank" class="option-btn github-btn">🔗 GitHub</a>
+                 <div class="skill-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4 data-translate-key="skillSD">تطوير البرمجيات (مع AI)</h4>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    
-    
-          
-            
-            <!-- Add more project cards -->
+                 <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h4 data-translate-key="skillSQL">SQL</h4>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4 data-translate-key="skillPowerBI">Power BI</h4>
+                </div>
+                 <div class="skill-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4 data-translate-key="skillDA">تحليل البيانات</h4>
+                </div>
+                 </div>
         </div>
     </section>
 
-    <section id="certificates" class="certificates">
-        <h2>Certificates</h2>
-        <div class="certificate-list">
-            <div class="certificate-item">
-                <a href="IMG_5675.jpg" target="_blank">
-                    <img src="IMG_5675.jpg" alt="IBM AI Certificate">
-                </a>
-                <h3>IBM AI Certificate</h3>
-                <p>Professional certification in Artificial Intelligence by IBM.</p>
-            </div>
-            <div class="certificate-item">
-                <a href="IMG_5479_page-0001-min.jpg" target="_blank">
-                    <img src="IMG_5479_page-0001-min.jpg" alt="SDAIA T5 Bootcamp">
-                </a>
-                <h3>SDAIA T5 Bootcamp</h3>
-                <p>A prestigious bootcamp provided by the Saudi Data and Artificial Intelligence Authority (SDAIA), focusing on advanced training in data science, artificial intelligence, and innovative technology solutions to address real-world challenges.</p>
-            </div>
-            <div class="certificate-item">
-                <a href="8d509f66-6df4-4ec0-b405-416c6bac5473-page-001.jpg" target="_blank">
-                    <img src="8d509f66-6df4-4ec0-b405-416c6bac5473-page-001.jpg" alt="Institute of Public Administration">
-                </a>
-                <h3>Institute of Public Administration</h3>
-                <p>A highly reputed educational institution in Saudi Arabia, offering professional diploma programs in computer programming, business management, and public administration. Known for excellence in preparing graduates for dynamic career opportunities.</p>
-            </div>
-            <div class="certificate-item">
-                <a href="CourseraPowerBi_page-0001.jpg" target="_blank">
-                    <img src="CourseraPowerBi_page-0001.jpg" alt="Power BI Certification">
-                </a>
-                <h3>Power BI Certification</h3>
-                <p>Data Visualization with Power BI Certification.</p>
-            </div>
-            <div class="certificate-item">
-                <a href="CourseraEXCEL_page-0001.jpg" target="_blank">
-                    <img src="CourseraEXCEL_page-0001.jpg" alt="Excel Certification">
-                </a>
-                <h3>Excel Certification</h3>
-                <p>Advanced Excel for Business Analysis Certification.</p>
+     <section id="soft-skills" class="section">
+        <div class="container">
+            <h2 class="section-title" data-translate-key="softSkillsTitle">الكفاءات الشخصية</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4 data-translate-key="softSkillPS">حل المشكلات</h4>
+                    <p data-translate-key="softSkillPSDesc">تحليل التحديات المعقدة وتطبيق المنهجيات المناسبة لإيجاد حلول فعالة ومبتكرة.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-users"></i>
+                    <h4 data-translate-key="softSkillTeam">العمل الجماعي</h4>
+                    <p data-translate-key="softSkillTeamDesc">التعاون بفعالية مع أعضاء الفريق لتحقيق الأهداف المشتركة وتبادل المعرفة.</p>
+                </div>
+                 <div class="skill-item">
+                    <i class="fas fa-comments"></i>
+                    <h4 data-translate-key="softSkillComm">التواصل الفعال</h4>
+                    <p data-translate-key="softSkillCommDesc">شرح الأفكار التقنية المعقدة بوضوح وتقديم النتائج بشكل مفهوم لمختلف الجماهير.</p>
+                </div>
+                 <div class="skill-item">
+                    <i class="fas fa-brain"></i>
+                    <h4 data-translate-key="softSkillCrit">التفكير النقدي</h4>
+                    <p data-translate-key="softSkillCritDesc">تقييم المعلومات بموضوعية وتحليل الافتراضات للوصول إلى استنتاجات منطقية.</p>
+                </div>
+                 <div class="skill-item">
+                    <i class="fas fa-book-open-reader"></i>
+                    <h4 data-translate-key="softSkillLearn">التعلم المستمر</h4>
+                    <p data-translate-key="softSkillLearnDesc">الالتزام بتطوير المهارات ومواكبة أحدث التقنيات في مجال الذكاء الاصطناعي وتحليل البيانات.</p>
+                </div>
+                 <div class="skill-item">
+                    <i class="fas fa-clock"></i>
+                    <h4 data-translate-key="softSkillTime">إدارة الوقت</h4>
+                    <p data-translate-key="softSkillTimeDesc">تنظيم المهام وتحديد الأولويات لإنجاز العمل بكفاءة وضمن الجداول الزمنية.</p>
+                </div>
             </div>
         </div>
     </section>
-    
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out for collaboration or inquiries.</p>
-        <div class="contact-details">
-            <p><i class="fas fa-phone-alt"></i> Phone: <a href="tel:+966581009740">+966 58 100 9740</a></p>
-            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:abdulaziz.althubaiti@gmail.com">abdulaziz.althubaiti@gmail.com</a></p>
-            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/abdulazizlinkai/" target="_blank">Abdulaziz Al-Thobaiti</a></p>
+    <section id="projects" class="section section-alt-bg">
+        <div class="container">
+            <h2 class="section-title" data-translate-key="projectsTitle">المشاريع</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="/Users/abdulaziz/Desktop/MyProtofolio/Flux_Dev_Create_a_professional_and_dynamic_cover_image_for_a_f_1.jpg" alt="BallVision">
+                    <div class="project-card-content">
+                        <h3 data-translate-key="proj1Title">BallVision (نظام تحليل أداء كرة القدم)</h3>
+                        <p data-translate-key="proj1Desc">
+                            نظام يستخرج إحصائيات وأنماط تكتيكية جوهرية يصعب قياسها يدوياً من فيديوهات المباريات (مثل الضغط، المساحات، العزلة)، بهدف تحسين عملية اتخاذ القرار للمدربين والمحللين.
+                        </p>
+                        <div class="project-tags">
+                            <span>Computer Vision</span>
+                            <span>Object Tracking</span>
+                            <span>YOLOv8</span>
+                            <span>Python</span>
+                            <span>OpenCV</span>
+                            <span>Data Analysis</span>
+                        </div>
+                        <div class="project-links">
+                             <a href="https://youtu.be/5qhzZ_sSixo" target="_blank"><i class="fas fa-video"></i> <span data-translate-key="demoLink">عرض توضيحي</span></a>
+                            <a href="https://github.com/abdu1z1z/BallVisionSCAI.git" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="project-card">
+                    <img src="DBALLjpg.jpg" alt="BallTrack"> <div class="project-card-content">
+                        <h3 data-translate-key="projBallTrackTitle">BallTrack (نظام تتبع الكرة)</h3>
+                        <p data-translate-key="projBallTrackDesc">
+                            تطبيق متخصص في تتبع حركة الكرة بدقة عالية في مباريات كرة القدم باستخدام YOLO، مع التركيز على استخراج بيانات المسار والسرعة لتحليل أداء اللاعبين الفردي.
+                        </p>
+                        <div class="project-tags">
+                            <span>Computer Vision</span>
+                            <span>Object Tracking</span>
+                            <span>YOLO</span>
+                            <span>Python</span>
+                            <span>OpenCV</span>
+                        </div>
+                        <div class="project-links">
+                             <a href="https://youtu.be/AdmeCwx5P7Q" target="_blank"><i class="fas fa-video"></i> <span data-translate-key="demoLink">عرض توضيحي</span></a>
+                            <a href="https://github.com/abdu1z1z/TrackBall" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="DGhirasr.jpg" alt="AI Image Classifier">
+                    <div class="project-card-content">
+                        <h3 data-translate-key="proj2Title">AI Image Classifier (مصنف صور النباتات)</h3>
+                        <p data-translate-key="proj2Desc">
+                            تطوير وتدريب نموذج تعلم عميق باستخدام TensorFlow/Keras لتصنيف صور النباتات المحلية بدقة تزيد عن 30 فئة. يقدم التطبيق معلومات تفصيلية ومواقع التواجد، مساهماً في التوثيق البيئي.
+                        </p>
+                        <div class="project-tags">
+                            <span>Deep Learning</span>
+                            <span>Computer Vision</span>
+                            <span>TensorFlow</span>
+                            <span>Python</span>
+                            <span>Swift</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://youtube.com/shorts/kgzhjyqbxEg?feature=share" target="_blank"><i class="fas fa-video"></i> <span data-translate-key="demoLink">عرض توضيحي</span></a>
+                            <a href="https://github.com/abdu1z1z/GhirasSwiftAI" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="DMovie.jpg" alt="Movie Recommendation System">
+                    <div class="project-card-content">
+                        <h3 data-translate-key="proj3Title">Movie Recommendation System (نظام توصية بالأفلام)</h3>
+                        <p data-translate-key="proj3Desc">
+                            بناء وتطبيق خوارزميات تعلم الآلة (مثل الترشيح التعاوني) وواجهة برمجة تطبيقات (API) باستخدام Flask لإنشاء نظام توصية شخصي للأفلام بناءً على تقييمات المستخدمين وأنماط المشاهدة، مما يعزز تجربة المستخدم.
+                        </p>
+                        <div class="project-tags">
+                            <span>Machine Learning</span>
+                            <span>Recommender Systems</span>
+                            <span>Collaborative Filtering</span>
+                            <span>Python</span>
+                            <span>API</span>
+                            <span>Flask</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://youtu.be/XpCvjG3zD0w" target="_blank"><i class="fas fa-video"></i> <span data-translate-key="demoLink">عرض توضيحي</span></a>
+                            <a href="https://github.com/abdu1z1z/RecommendSystem" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="DLoan.jpg" alt="Loan Status Prediction">
+                    <div class="project-card-content">
+                        <h3 data-translate-key="proj4Title">Loan Status Prediction (التنبؤ بحالة القروض)</h3>
+                        <p data-translate-key="proj4Desc">
+                            تطبيق نماذج تصنيف متعددة (مثل Logistic Regression, SVM) لتقييم طلبات القروض والتنبؤ بالموافقة أو الرفض بناءً على بيانات العملاء التاريخية، بهدف تحسين دقة تقييم المخاطر.
+                        </p>
+                        <div class="project-tags">
+                            <span>Machine Learning</span>
+                            <span>Classification</span>
+                            <span>Data Preprocessing</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/abdu1z1z/LoanStatusBldModl" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="DFIRE.jpg" alt="Fire Data Analysis">
+                    <div class="project-card-content">
+                        <h3>Fire Data Analysis (تحليل بيانات الحرائق)</h3>
+                        <p data-translate-key="proj5Desc">
+                           إجراء تحليل استكشافي لبيانات حرائق الغابات في البرتغال، وتطبيق نماذج الانحدار لتقييم تأثير مؤشرات الطقس (مثل FWI) على المساحة المحترقة، بهدف فهم عوامل الخطر.
+                        </p>
+                        <div class="project-tags">
+                            <span>Data Analysis</span>
+                            <span>Regression</span>
+                            <span>EDA</span>
+                            <span>Python</span>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/abdu1z1z/FireEDA" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
+                        </div>
+                    </div>
+                </div>
+                </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="education" class="section section-alt-bg">
+        <div class="container">
+            <h2 class="section-title" data-translate-key="educationTitle">التعليم</h2>
+            <ul class="timeline-list">
+                 <li class="timeline-item">
+                    <strong data-translate-key="eduDegree">دبلوم في برمجة الحاسب (معدل 4.57)</strong>
+                    <span data-translate-key="eduInstitute">معهد الإدارة العامة - أواخر 2023</span>
+                </li>
+                 </ul>
+        </div>
+    </section>
+
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title" data-translate-key="certsTitle">الشهادات والدورات</h2>
+            <ul class="timeline-list">
+                <li class="timeline-item">
+                    <strong data-translate-key="cert1Title">معسكر علوم البيانات T5 (لمدة ٣ شهور)</strong>
+                    <span data-translate-key="cert1Issuer">الهيئة السعودية للبيانات والذكاء الاصطناعي (SDAIA) وأكاديمية طويق</span>
+                    <a href="IMG_5479_page-0001-min.jpg" target="_blank" class="cert-link" data-translate-key="viewCert">عرض الشهادة</a>
+                </li>
+                <li class="timeline-item">
+                    <strong data-translate-key="cert2Title">معسكر الذكاء الاصطناعي (لمدة ٢ شهر)</strong>
+                     <span data-translate-key="cert2Issuer">الهيئة السعودية للبيانات والذكاء الاصطناعي (SDAIA) وأكاديمية طويق</span>
+                     </li>
+                 <li class="timeline-item">
+                     <strong data-translate-key="cert3Title">Professional Certificate - Introduction to Artificial Intelligence</strong>
+                    <span data-translate-key="cert3Issuer">IBM (Coursera)</span>
+                    <a href="IMG_5675.jpg" target="_blank" class="cert-link" data-translate-key="viewCert">عرض الشهادة</a>
+                </li>
+                 <li class="timeline-item">
+                    <strong data-translate-key="cert4Title">Data Visualization with Power BI</strong>
+                    <span data-translate-key="cert4Issuer">Coursera</span>
+                     <a href="CourseraPowerBi_page-0001.jpg" target="_blank" class="cert-link" data-translate-key="viewCert">عرض الشهادة</a>
+                </li>
+                 <li class="timeline-item">
+                    <strong data-translate-key="cert5Title">Excel Skills for Business: Advanced</strong>
+                     <span data-translate-key="cert5Issuer">Coursera</span>
+                    <a href="CourseraEXCEL_page-0001.jpg" target="_blank" class="cert-link" data-translate-key="viewCert">عرض الشهادة</a>
+                </li>
+                 </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section section-alt-bg">
+        <div class="container">
+            <h2 class="section-title" data-translate-key="contactTitle">تواصل معي</h2>
+            <p data-translate-key="contactDesc">
+                مهتم بمناقشة المشاريع أو الفرص؟ لا تتردد في التواصل!
+            </p>
+            <div class="contact-links">
+                <a href="mailto:abdulaziz.althubaiti@gmail.com" target="_blank"><i class="fas fa-envelope"></i> <span data-translate-key="contactEmail">البريد الإلكتروني</span></a>
+                <a href="https://www.linkedin.com/in/abdulazizlinkai/" target="_blank"><i class="fab fa-linkedin"></i> <span data-translate-key="contactLinkedIn">لينكدإن</span></a>
+                <a href="https://github.com/abdu1z1z" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="contactGitHub">GitHub</span></a>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Abdulaziz Al-Thobaiti. </p>
+        <div class="container">
+            <p data-translate-key="footerText">© 2025 - عبدالعزيز الثبيتي. جميع الحقوق محفوظة.</p>
+        </div>
     </footer>
+
+    <script>
+        const translations = {
+            en: {
+                navAbout: "About Me",
+                navSkills: "Skills",
+                navSoftSkills: "Competencies",
+                navProjects: "Projects",
+                navEducation: "Education",
+                navCerts: "Certificates",
+                navContact: "Contact",
+                heroName: "Abdulaziz Al-Thubaiti",
+                heroTitle: "Data Scientist & AI | Programmer", // Updated Headline EN
+                heroResumeBtn: "Download Resume",
+                aboutTitle: "About Me",
+                aboutP1: "Computer programming graduate with a strong technical background, interested in Artificial Intelligence with practical experience in implementing over 10 specialized projects in data analysis, model development, and applying machine learning and computer vision techniques to solve practical problems. Enhanced academic expertise by completing two intensive bootcamps in data science and artificial intelligence from SDAIA and Tuwaiq Academy. I believe the true value of AI lies in transforming data into tools for deeper understanding and more accurate decision-making, always striving to combine engineering thinking with practical innovation to create smart solutions that make a real difference.",
+                skillsTitle: "Technical Skills",
+                softSkillsTitle: "Personal Competencies",
+                skillPython: "Python",
+                skillML: "Machine Learning",
+                skillDL: "Deep Learning",
+                skillCV: "Computer Vision",
+                skillSD: "Software Development (with AI)",
+                skillSQL: "SQL",
+                skillPowerBI: "Power BI",
+                skillDA: "Data Analysis",
+                skillPS: "Problem Solving",
+                softSkillPS: "Problem Solving",
+                softSkillPSDesc: "Analyzing complex challenges and applying appropriate methodologies to find effective and innovative solutions.",
+                softSkillTeam: "Teamwork",
+                softSkillTeamDesc: "Collaborating effectively with team members to achieve common goals and share knowledge.",
+                softSkillComm: "Effective Communication",
+                softSkillCommDesc: "Clearly explaining complex technical concepts and presenting results understandably to diverse audiences.",
+                softSkillCrit: "Critical Thinking",
+                softSkillCritDesc: "Evaluating information objectively and analyzing assumptions to reach logical conclusions.",
+                softSkillLearn: "Continuous Learning",
+                softSkillLearnDesc: "Committed to skill development and keeping up-to-date with the latest technologies in AI and data analysis.",
+                softSkillTime: "Time Management",
+                softSkillTimeDesc: "Organizing tasks and prioritizing effectively to deliver work efficiently and on schedule.",
+                projectsTitle: "Projects",
+                proj1Title: "BallVision (Football Performance Analysis System)",
+                proj1Desc: "A system that extracts essential tactical statistics and patterns (like pressure, space, isolation) from match videos, often difficult to quantify manually, aiming to improve decision-making for coaches and analysts.",
+                projBallTrackTitle: "BallTrack (Ball Tracking System)",
+                projBallTrackDesc: "A specialized application focused on high-accuracy ball tracking in football matches using YOLO, extracting path and velocity data for individual player performance analysis.",
+                proj2Title: "AI Image Classifier (Plant Species)",
+                proj2Desc: "Developed and trained a deep learning model using TensorFlow/Keras to classify local plant images into over 30 categories, providing detailed information and locations, contributing to environmental documentation.",
+                proj3Title: "Movie Recommendation System",
+                proj3Desc: "Built and implemented machine learning algorithms (like collaborative filtering) and a Flask API to create a personalized movie recommendation system based on user ratings and viewing patterns, enhancing user experience.",
+                proj4Title: "Loan Status Prediction",
+                proj4Desc: "Applied multiple classification models (e.g., Logistic Regression, SVM) to evaluate loan applications and predict approval or rejection based on historical customer data, aiming to improve risk assessment accuracy.",
+                proj5Title: "Fire Data Analysis",
+                proj5Desc: "Conducted exploratory data analysis on forest fire data from Portugal and applied regression models to assess the impact of weather indices (like FWI) on the burned area, aiming to understand risk factors.",
+                demoLink: "Demo",
+                sourceLink: "Source Code",
+                educationTitle: "Education",
+                eduDegree: "Higher Diploma in Computer Programming (GPA: 4.57)",
+                eduInstitute: "Institute of Public Administration - Late 2023",
+                certsTitle: "Certificates & Courses",
+                cert1Title: "Data Science Bootcamp T5 (3 Months)",
+                cert1Issuer: "SDAIA & Tuwaiq Academy",
+                cert2Title: "Artificial Intelligence Bootcamp (2 Months)",
+                cert2Issuer: "SDAIA & Tuwaiq Academy",
+                cert3Title: "Professional Certificate - Introduction to Artificial Intelligence",
+                cert3Issuer: "IBM (Coursera)",
+                cert4Title: "Data Visualization with Power BI",
+                cert4Issuer: "Coursera",
+                cert5Title: "Excel Skills for Business: Advanced",
+                cert5Issuer: "Coursera",
+                viewCert: "View Certificate",
+                contactTitle: "Contact Me",
+                contactDesc: "Interested in discussing projects or opportunities? Feel free to reach out!",
+                contactEmail: "Email",
+                contactLinkedIn: "LinkedIn",
+                contactGitHub: "GitHub",
+                footerText: "© 2025 - Abdulaziz Al-Thubaiti. All rights reserved.",
+                langToggle: "AR"
+
+            },
+            ar: {
+                navAbout: "نبذة عني",
+                navSkills: "المهارات",
+                navSoftSkills: "الكفاءات",
+                navProjects: "المشاريع",
+                navEducation: "التعليم",
+                navCerts: "الشهادات",
+                navContact: "تواصل معي",
+                heroName: "عبدالعزيز الثبيتي",
+                heroTitle: "Data Scientist & AI | Programmer", // Updated Headline AR
+                heroResumeBtn: "تحميل السيرة الذاتية", // Updated Button Text
+                aboutTitle: "نبذة عني",
+                aboutP1: "خريج برمجة حاسب بخلفية تقنية قوية، مهتم في الذكاء الاصطناعي ولدي خبرة عملية في تنفيذ أكثر من 10 مشاريع متخصصة في تحليل البيانات، تطوير النماذج، وتطبيق تقنيات التعلم الآلي والرؤية الحاسوبية لحل مشكلات عملية. عززت خبرتي الأكاديمية من خلال إتمام معسكرين تدريبيين مكثفين في علوم البيانات والذكاء الاصطناعي مقدمة من الهيئة السعودية للبيانات والذكاء الاصطناعي (SDAIA) وأكاديمية طويق. أؤمن بأن القيمة الحقيقية للذكاء الاصطناعي تكمن في تحويل البيانات إلى أدوات لفهم أعمق واتخاذ قرارات أدق، وأسعى دائمًا للجمع بين التفكير الهندسي والابتكار العملي لصناعة حلول ذكية تحدث فارقًا حقيقيًا.",
+                skillsTitle: "المهارات التقنية",
+                softSkillsTitle: "الكفاءات الشخصية",
+                skillPython: "Python",
+                skillML: "تعلم الآلة",
+                skillDL: "التعلم العميق",
+                skillCV: "رؤية الحاسب",
+                skillSD: "تطوير البرمجيات (مع AI)",
+                skillSQL: "SQL",
+                skillPowerBI: "Power BI",
+                skillDA: "تحليل البيانات",
+                skillPS: "حل المشكلات",
+                softSkillPS: "حل المشكلات",
+                softSkillPSDesc: "تحليل التحديات المعقدة وتطبيق المنهجيات المناسبة لإيجاد حلول فعالة ومبتكرة.",
+                softSkillTeam: "العمل الجماعي",
+                softSkillTeamDesc: "التعاون بفعالية مع أعضاء الفريق لتحقيق الأهداف المشتركة وتبادل المعرفة.",
+                softSkillComm: "التواصل الفعال",
+                softSkillCommDesc: "شرح الأفكار التقنية المعقدة بوضوح وتقديم النتائج بشكل مفهوم لمختلف الجماهير.",
+                softSkillCrit: "التفكير النقدي",
+                softSkillCritDesc: "تقييم المعلومات بموضوعية وتحليل الافتراضات للوصول إلى استنتاجات منطقية.",
+                softSkillLearn: "التعلم المستمر",
+                softSkillLearnDesc: "الالتزام بتطوير المهارات ومواكبة أحدث التقنيات في مجال الذكاء الاصطناعي وتحليل البيانات.",
+                softSkillTime: "إدارة الوقت",
+                softSkillTimeDesc: "تنظيم المهام وتحديد الأولويات لإنجاز العمل بكفاءة وضمن الجداول الزمنية.",
+                projectsTitle: "المشاريع",
+                proj1Title: "BallVision (نظام تحليل أداء كرة القدم)",
+                proj1Desc: "نظام يستخرج إحصائيات وأنماط تكتيكية جوهرية يصعب قياسها يدوياً من فيديوهات المباريات (مثل الضغط، المساحات، العزلة)، بهدف تحسين عملية اتخاذ القرار للمدربين والمحللين.",
+                projBallTrackTitle: "BallTrack (نظام تتبع الكرة)",
+                projBallTrackDesc: "تطبيق متخصص في تتبع حركة الكرة بدقة عالية في مباريات كرة القدم باستخدام YOLO، مع التركيز على استخراج بيانات المسار والسرعة لتحليل أداء اللاعبين الفردي.",
+                proj2Title: "AI Image Classifier (مصنف صور النباتات)",
+                proj2Desc: "تطوير وتدريب نموذج تعلم عميق باستخدام TensorFlow/Keras لتصنيف صور النباتات المحلية بدقة تزيد عن 30 فئة. يقدم التطبيق معلومات تفصيلية ومواقع التواجد، مساهماً في التوثيق البيئي.",
+                proj3Title: "Movie Recommendation System (نظام توصية بالأفلام)",
+                proj3Desc: "بناء وتطبيق خوارزميات تعلم الآلة (مثل الترشيح التعاوني) وواجهة برمجة تطبيقات (API) باستخدام Flask لإنشاء نظام توصية شخصي للأفلام بناءً على تقييمات المستخدمين وأنماط المشاهدة، مما يعزز تجربة المستخدم.",
+                proj4Title: "Loan Status Prediction (التنبؤ بحالة القروض)",
+                proj4Desc: "تطبيق نماذج تصنيف متعددة (مثل Logistic Regression, SVM) لتقييم طلبات القروض والتنبؤ بالموافقة أو الرفض بناءً على بيانات العملاء التاريخية، بهدف تحسين دقة تقييم المخاطر.",
+                proj5Title: "Fire Data Analysis (تحليل بيانات الحرائق)",
+                proj5Desc: "إجراء تحليل استكشافي لبيانات حرائق الغابات في البرتغال، وتطبيق نماذج الانحدار لتقييم تأثير مؤشرات الطقس (مثل FWI) على المساحة المحترقة، بهدف فهم عوامل الخطر.",
+                demoLink: "عرض توضيحي",
+                sourceLink: "كود المصدر",
+                educationTitle: "التعليم",
+                eduDegree: "دبلوم عالي في برمجة الحاسب (معدل 4.57)",
+                eduInstitute: "معهد الإدارة العامة - أواخر 2023",
+                certsTitle: "الشهادات والدورات",
+                cert1Title: "معسكر علوم البيانات T5 (لمدة ٣ شهور)",
+                cert1Issuer: "الهيئة السعودية للبيانات والذكاء الاصطناعي (SDAIA) وأكاديمية طويق",
+                cert2Title: "معسكر الذكاء الاصطناعي (لمدة ٢ شهر)",
+                cert2Issuer: "الهيئة السعودية للبيانات والذكاء الاصطناعي (SDAIA) وأكاديمية طويق",
+                cert3Title: "Professional Certificate - Introduction to Artificial Intelligence",
+                cert3Issuer: "IBM (Coursera)",
+                cert4Title: "Data Visualization with Power BI",
+                cert4Issuer: "Coursera",
+                cert5Title: "Excel Skills for Business: Advanced",
+                cert5Issuer: "Coursera",
+                viewCert: "عرض الشهادة",
+                contactTitle: "تواصل معي",
+                contactDesc: "مهتم بمناقشة المشاريع أو الفرص؟ لا تتردد في التواصل!",
+                contactEmail: "البريد الإلكتروني",
+                contactLinkedIn: "لينكدإن",
+                contactGitHub: "GitHub",
+                footerText: "© 2025 - عبدالعزيز الثبيتي. جميع الحقوق محفوظة.",
+                langToggle: "EN" // Text for button when page is AR
+            }
+        };
+
+        let currentLanguage = 'ar'; // Default language
+
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-translate-key]');
+            const htmlEl = document.documentElement;
+
+            if (!translations[lang]) {
+                console.error("Language not supported:", lang);
+                return;
+            }
+
+            elements.forEach(el => {
+                const key = el.getAttribute('data-translate-key');
+                if (translations[lang][key]) {
+                    if (el.tagName === 'BUTTON' && key === 'langToggle') {
+                       const nextLangKey = lang === 'ar' ? 'EN' : 'AR';
+                       el.textContent = nextLangKey;
+                    } else if (el.tagName === 'A' && key === 'heroResumeBtn') {
+                         el.textContent = translations[lang][key];
+                    } else if (el.tagName === 'SPAN' && el.parentElement.classList.contains('project-links')) {
+                         // Keep span content as is for demo/source links
+                    }
+                    else {
+                        el.innerHTML = translations[lang][key];
+                    }
+                } else {
+                    // console.warn("Translation key not found:", key, "for language:", lang);
+                }
+            });
+
+            htmlEl.setAttribute('lang', lang);
+            htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+            currentLanguage = lang;
+
+             const toggleBtn = document.getElementById('lang-toggle-btn');
+             if (toggleBtn) {
+                  const nextLangKey = lang === 'ar' ? 'EN' : 'AR';
+                  toggleBtn.textContent = translations[nextLang]['langToggle'];
+             }
+        }
+
+        // --- Event Listeners ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const langToggleButton = document.getElementById('lang-toggle-btn');
+
+            if (langToggleButton) {
+                langToggleButton.addEventListener('click', () => {
+                    const nextLang = currentLanguage === 'ar' ? 'en' : 'ar';
+                    setLanguage(nextLang);
+                });
+            }
+
+            setLanguage('ar'); // Initialize default language
+
+            document.querySelectorAll('header nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    const headerOffset = document.querySelector('header').offsetHeight + 20;
+
+                    if(targetElement) {
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        setTimeout(() => {
+                            document.querySelectorAll('header nav a').forEach(a => a.classList.remove('active'));
+                            this.classList.add('active');
+                        }, 100);
+                    }
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                let current = 'about';
+                const sections = document.querySelectorAll('section[id]');
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const scrollOffset = headerHeight + 50;
+                const scrollPosition = window.pageYOffset;
+
+                sections.forEach( section => {
+                    const sectionTop = section.offsetTop - scrollOffset;
+                    const sectionHeight = section.offsetHeight;
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                 if (current === '' && scrollPosition < sections[0].offsetTop - scrollOffset) {
+                      current = sections[0].getAttribute('id');
+                 }
+
+
+                 document.querySelectorAll('header nav a').forEach( a => {
+                    a.classList.remove('active');
+                    if(a.getAttribute('href') === '#' + current){
+                        a.classList.add('active');
+                    }
+                });
+            }, { passive: true });
+
+        });
+    </script>
+
 </body>
 </html>
