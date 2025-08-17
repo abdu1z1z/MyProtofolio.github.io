@@ -85,7 +85,7 @@
         header nav ul li {
             margin-right: 1.25rem; /* Adjust spacing */
         }
-           header nav ul li:last-child {
+            header nav ul li:last-child {
               margin-right: 0;
            }
 
@@ -258,7 +258,7 @@
         }
          #skills .skill-item:hover i, #soft-skills .skill-item:hover i {
              color: var(--primary-darker);
-           }
+          }
         #skills .skill-item h4, #soft-skills .skill-item h4 { /* Apply to both titles */
             font-size: 1rem;
             font-weight: 600;
@@ -270,7 +270,7 @@
              color: var(--secondary-color);
              margin-top: 0.5rem;
              min-height: 40px; /* Ensure consistent height */
-           }
+          }
 
 
         /* --- Projects Section --- */
@@ -363,26 +363,26 @@
          .project-links a i {
              margin-right: 0.3rem; /* Keep margin-right for RTL */
              margin-left: 0.3rem; /* Add margin-left for LTR */
-           }
+          }
           html[dir="ltr"] .project-links a i {
              margin-right: 0;
              margin-left: 0.3rem;
-           }
+          }
 
          .project-links a:last-child {
              margin-right: 0;
              margin-left: 0;
-           }
+          }
          /* ✅ Add space after video/github icon */
          .project-links a i.fa-video,
          .project-links a i.fa-github {
              margin-left: 0.5rem; /* Adjust space as needed for RTL */
-           }
+          }
           html[dir="ltr"] .project-links a i.fa-video,
           html[dir="ltr"] .project-links a i.fa-github {
              margin-left: 0;
              margin-right: 0.5rem; /* Adjust space as needed for LTR */
-           }
+          }
 
 
         /* --- Certifications Section --- */
@@ -495,11 +495,11 @@
              margin-right: 0.5rem; /* Space between icon and text for RTL */
              margin-left: 0;
              font-size: 1.1rem; /* Adjust icon size */
-           }
+          }
           html[dir="ltr"] .contact-links a i {
              margin-right: 0;
              margin-left: 0.5rem;
-           }
+          }
 
         .contact-links a:hover {
             background-color: var(--primary-color);
@@ -534,10 +534,10 @@
             .timeline-item { padding: 1.2rem; padding-right: 35px; }
             html[dir="ltr"] .timeline-item { padding-left: 35px; padding-right: 1.2rem; }
             .timeline-item strong { margin-left: 0; }
-             .timeline-list::before { right: 10px; }
-              html[dir="ltr"] .timeline-list::before { left: 10px; right: auto; }
-              .timeline-item::before { right: 4px; width: 12px; height: 12px; }
-              html[dir="ltr"] .timeline-item::before { left: 4px; right: auto; }
+              .timeline-list::before { right: 10px; }
+               html[dir="ltr"] .timeline-list::before { left: 10px; right: auto; }
+               .timeline-item::before { right: 4px; width: 12px; height: 12px; }
+               html[dir="ltr"] .timeline-item::before { left: 4px; right: auto; }
             .contact-links a { margin: 0.5rem 0.5rem; }
             #skills .skills-grid, #soft-skills .skills-grid { grid-template-columns: repeat(2, 1fr); } /* 2 columns on smaller screens */
         }
@@ -741,7 +741,26 @@
                     </div>
                 </div>
 
-                 <div class="project-card">
+                <div class="project-card">
+                    <img src="https://i.imgur.com/L4uS4T9.jpeg" alt="Pneumonia Detection from X-Rays">
+                    <div class="project-card-content">
+                        <h3 data-translate-key="projPneumoniaTitle">الكشف عن الالتهاب الرئوي بصور الأشعة</h3>
+                        <p data-translate-key="projPneumoniaDesc">
+                            نموذج تعلم عميق يستخدم تقنية التعلم بالنقل (Transfer Learning) مع بنية VGG16 المدربة مسبقًا لتصنيف صور الأشعة السينية للصدر بدقة عالية. تم تجميد طبقات القاعدة وتدريب مصنف مخصص لتحقيق أداء فعال على البيانات الطبية.
+                        </p>
+                        <div class="project-tags">
+                            <span>Deep Learning</span>
+                            <span>Computer Vision</span>
+                            <span>PyTorch</span>
+                            <span>Transfer Learning</span>
+                            <span>VGG16</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/abdu1z1z/PneumoNet" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
                     <img src="DBALLjpg.jpg" alt="BallTrack">
                     <div class="project-card-content">
                         <h3 data-translate-key="projBallTrackTitle">BallTrack (نظام تتبع الكرة)</h3>
@@ -954,12 +973,12 @@
                 softSkillTime: "Time Management",
                 softSkillTimeDesc: "Organizing tasks and prioritizing effectively to deliver work efficiently and on schedule.",
                 projectsTitle: "Projects",
-                // NEW PROJECT TRANSLATIONS (EN)
                 projChurnTitle: "Customer Churn Prediction",
                 projChurnDesc: "An end-to-end project that analyzes telecom customer data to build a machine learning model for predicting churn. It includes data cleaning, feature engineering, handling imbalance, and evaluating multiple models (XGBoost) to deliver strategic business recommendations.",
-                // END OF NEW PROJECT TRANSLATIONS
                 proj1Title: "BallVision (Football Performance Analysis System)",
                 proj1Desc: "A system that extracts essential tactical statistics and patterns (like pressure, space, isolation) from match videos, often difficult to quantify manually, aiming to improve decision-making for coaches and analysts.",
+                projPneumoniaTitle: "Pneumonia Detection from X-Rays", // ### NEW
+                projPneumoniaDesc: "A deep learning model utilizing transfer learning with a pre-trained VGG16 architecture to classify chest X-ray images with high accuracy. The base layers were frozen, and a custom classifier was trained for effective performance on medical data.", // ### NEW
                 projBallTrackTitle: "BallTrack (Ball Tracking System)",
                 projBallTrackDesc: "A specialized application focused on high-accuracy ball tracking in football matches using YOLO, extracting path and velocity data for individual player performance analysis.",
                 proj2Title: "AI Image Classifier (Plant Species)",
@@ -989,7 +1008,7 @@
                 cert5Title: "Excel Skills for Business: Advanced",
                 cert5Issuer: "Coursera",
                 cert6Title:"Oracle AI Vector Search Certified Professional",
-                cert6Issuer : "Oracle", // Corrected issuer
+                cert6Issuer : "Oracle", 
                 viewCert: "View Certificate",
                 contactTitle: "Contact Me",
                 contactDesc: "Interested in discussing projects or opportunities? Feel free to reach out!",
@@ -1036,12 +1055,12 @@
                 softSkillTime: "إدارة الوقت",
                 softSkillTimeDesc: "تنظيم المهام وتحديد الأولويات لإنجاز العمل بكفاءة وضمن الجداول الزمنية.",
                 projectsTitle: "المشاريع",
-                // NEW PROJECT TRANSLATIONS (AR)
                 projChurnTitle: "التنبؤ بمغادرة العملاء (Customer Churn)",
                 projChurnDesc: "مشروع متكامل يحلل بيانات عملاء شركة اتصالات لبناء نموذج تعلم آلة يتنبأ بالعملاء المعرضين لخطر المغادرة. يتضمن تنظيف البيانات، هندسة الميزات، معالجة عدم التوازن، وتقييم نماذج متعددة (XGBoost) للوصول إلى توصيات عمل استراتيجية.",
-                // END OF NEW PROJECT TRANSLATIONS
                 proj1Title: "BallVision (نظام تحليل أداء كرة القدم)",
                 proj1Desc: "نظام يستخرج إحصائيات وأنماط تكتيكية جوهرية يصعب قياسها يدوياً من فيديوهات المباريات (مثل الضغط، المساحات، العزلة)، بهدف تحسين عملية اتخاذ القرار للمدربين والمحللين.",
+                projPneumoniaTitle: "الكشف عن الالتهاب الرئوي بصور الأشعة", // ### NEW
+                projPneumoniaDesc: "نموذج تعلم عميق يستخدم تقنية التعلم بالنقل (Transfer Learning) مع بنية VGG16 المدربة مسبقًا لتصنيف صور الأشعة السينية للصدر بدقة عالية. تم تجميد طبقات القاعدة وتدريب مصنف مخصص لتحقيق أداء فعال على البيانات الطبية.", // ### NEW
                 projBallTrackTitle: "BallTrack (نظام تتبع الكرة)",
                 projBallTrackDesc: "تطبيق متخصص في تتبع حركة الكرة بدقة عالية في مباريات كرة القدم باستخدام YOLO، مع التركيز على استخراج بيانات المسار والسرعة لتحليل أداء اللاعبين الفردي.",
                 proj2Title: "AI Image Classifier (مصنف صور النباتات)",
@@ -1153,7 +1172,7 @@
                         a.classList.add('active');
                     }
                 });
-             }, { passive: true });
+            }, { passive: true });
 
         });
     </script>
