@@ -1,1195 +1,848 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ملف أعمال عبدالعزيز الثبيتي - عالم بيانات ومبرمج متخصص في الذكاء الاصطناعي.">
-    <meta name="keywords" content="عبدالعزيز الثبيتي, بورتفوليو, ملف أعمال, عالم بيانات, Data Scientist, مبرمج, Programmer, ذكاء اصطناعي, AI Engineer, تحليل بيانات, SQL, Power BI, تعلم الآلة, تعلم عميق, هاكاثون, BallVision, BallTrack, رؤية الحاسب, SCAI League, Flask, API">
-    <title>ملف أعمال عبدالعزيز الثبيتي</title>
+    <meta name="keywords" content="عبدالعزيز الثبيتي, Portfolio, Data Science, AI, Saudi Arabia, LLM, Fine-tuning">
+    <meta name="author" content="Abdulaziz Al-Thubaiti">
+    <title>ملف أعمال عبدالعزيز الثبيتي | AI & Data Science Portfolio</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: { 850: '#151e32' }
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        /* --- Base Styles & Variables --- */
-        :root {
-            --primary-color: #2563eb; /* أزرق مميز */
-            --primary-darker: #1d4ed8; /* أزرق أغمق */
-            --secondary-color: #4b5563; /* رمادي داكن للنصوص الثانوية */
-            --light-gray: #f3f4f6; /* رمادي فاتح جدا للخلفيات */
-            --medium-gray: #e5e7eb; /* رمادي متوسط للحدود */
-            --dark-gray: #111827; /* رمادي غامق جدا للهيدر/الفوتر */
-            --white-color: #ffffff;
-            --border-color: #e5e7eb;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 70px; /* Adjust based on final header height */
-        }
-
+        /* إعدادات أساسية */
         body {
-            font-family: 'Tajawal', sans-serif;
-            line-height: 1.7;
-            color: var(--secondary-color);
-            background-color: var(--light-gray);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: 'Cairo', sans-serif;
+            background-color: #020617; /* Slate-950 */
+            color: #e2e8f0; /* Slate-200 */
         }
 
-        /* --- Header & Navigation --- */
-        header {
-            background: var(--dark-gray);
-            color: var(--white-color);
-            padding: 0.75rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-md);
-            transition: background-color 0.3s ease;
+        /* تنسيق البطاقات الزجاجية (Glassmorphism) */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            padding-left: 1.5rem; /* Add padding for container */
-            padding-right: 1.5rem;
-            max-width: 1140px; /* Consistent width */
-            margin: auto;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 1.5rem; /* Slightly smaller */
-            color: var(--white-color);
-            font-weight: 700;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0; /* Remove default padding */
-            margin: 0; /* Remove default margin */
-            align-items: center; /* Align items vertically */
-        }
-
-        header nav ul li {
-            margin-right: 1.25rem; /* Adjust spacing */
-        }
-            header nav ul li:last-child {
-              margin-right: 0;
-           }
-
-        header nav ul li a {
-            color: #d1d5db;
-            font-weight: 500;
-            padding: 0.75rem 0.5rem; /* Adjust padding */
-            border-bottom: 3px solid transparent;
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
-            white-space: nowrap;
-            display: inline-block; /* Ensure padding works */
-        }
-
-        header nav ul li a:hover,
-        header nav ul li a.active {
-            color: var(--white-color);
-            border-bottom-color: var(--primary-color);
-        }
-        /* Language Toggle Button Style Updated */
-        #lang-toggle-btn {
-            background: none;
-            color: #d1d5db;
-            border: 1px solid #4b5563;
-            padding: 0.3rem 0.7rem; /* Smaller padding */
-            border-radius: 50%; /* Make it circular */
-            font-size: 0.9rem; /* Slightly larger font for single char */
-            font-weight: 700; /* Bolder */
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-            margin-right: 1rem;
-            width: 32px; /* Fixed width */
-            height: 32px; /* Fixed height */
-            display: inline-flex;
-            align-items: center;
-            justify-content: center; /* Center the character */
-            line-height: 1;
-        }
-        #lang-toggle-btn:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--white-color);
-            border-color: #6b7280;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url('artificial-intelligence-network-ai-line-circuit-technology-data-transfer-abstract-5g-network-background-illustration-video.jpg') no-repeat center center/cover;
-            color: var(--white-color);
-            padding: 8rem 1.5rem;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 2.8rem;
-            margin-bottom: 0.75rem;
-            color: var(--white-color);
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        .hero .headline {
-             font-size: 1.1rem; /* Reduced size */
-             font-weight: 500;
-             color: #9ca3af;
-             margin-bottom: 2.5rem;
-        }
-
-        .hero .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--white-color);
-            padding: 0.8rem 2.2rem;
-            border-radius: 30px;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: var(--shadow-md);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .hero .btn:hover {
-            background: var(--primary-darker);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* --- Sections General Styling --- */
-        .section {
-            padding: 5rem 1.5rem;
-            background-color: var(--white-color);
-            margin-bottom: 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .section:last-of-type {
-             border-bottom: none;
-             margin-bottom: 0;
-        }
-        .section-alt-bg {
-             background-color: var(--light-gray);
-        }
-
-
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 4rem;
-            color: var(--dark-gray);
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 50%;
-            transform: translateX(50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
-        }
-         html[dir="ltr"] .section-title::after {
-            left: 50%;
-            right: auto;
-            transform: translateX(-50%);
-       }
-
-        /* --- About Section --- */
-        #about p {
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-            color: var(--secondary-color);
-            font-size: 1.1rem;
-        }
-
-
-        /* --- Skills Section --- */
-        #skills .skills-grid, #soft-skills .skills-grid { /* Apply to both grids */
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-        }
-        @media (min-width: 640px) {
-            #skills .skills-grid, #soft-skills .skills-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        @media (min-width: 1024px) {
-            #skills .skills-grid, #soft-skills .skills-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-
-        #skills .skill-item, #soft-skills .skill-item { /* Apply to both cards */
-            background: var(--white-color);
-            padding: 1.5rem 1rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        #skills .skill-item:hover, #soft-skills .skill-item:hover {
-             transform: translateY(-4px);
-             box-shadow: var(--shadow-md);
-        }
-        #skills .skill-item i, #soft-skills .skill-item i { /* Apply to both icons */
-            font-size: 2.2rem;
-            margin-bottom: 0.8rem;
-            color: var(--primary-color);
-            transition: color 0.3s ease;
-        }
-         #skills .skill-item:hover i, #soft-skills .skill-item:hover i {
-             color: var(--primary-darker);
-         }
-        #skills .skill-item h4, #soft-skills .skill-item h4 { /* Apply to both titles */
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--dark-gray);
-        }
-         /* Specific style for soft skill description */
-         #soft-skills .skill-item p {
-             font-size: 0.85rem;
-             color: var(--secondary-color);
-             margin-top: 0.5rem;
-             min-height: 40px; /* Ensure consistent height */
-         }
-
-
-        /* --- Projects Section --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .project-card {
-            background: var(--white-color);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
+        .glass-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            background: rgba(30, 41, 59, 0.75);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.8);
         }
 
-        .project-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-             border-bottom: 1px solid var(--border-color);
+        /* شريط التنقل */
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .project-card-content {
-            padding: 1.8rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+        /* النصوص المتدرجة */
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .project-card h3 {
-            margin-bottom: 0.75rem;
-            color: var(--primary-darker);
-            font-size: 1.3rem;
+        /* نافذة عرض الصور (Modal) */
+        .modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+            z-index: 9999;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            transform: scale(0.95);
+            transition: all 0.3s ease-in-out;
+        }
+        .modal.active .modal-content {
+            transform: scale(1);
         }
 
-        .project-card p {
-            font-size: 1rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.2rem;
-            flex-grow: 1;
-        }
+        /* شريط التمرير */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
 
-        .project-tags {
-             margin-bottom: 1rem;
-        }
-
-        .project-tags span {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            margin-right: 0.5rem; /* Keep margin-right for RTL */
-            margin-left: 0.5rem; /* Add margin-left for LTR */
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        html[dir="ltr"] .project-tags span {
-             margin-right: 0;
-             margin-left: 0.5rem;
-        }
-
-
-        .project-links a {
-            margin-right: 1rem; /* Keep margin-right for RTL */
-            margin-left: 1rem; /* Add margin-left for LTR */
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--primary-color);
-            display: inline-flex; /* Use inline-flex for icon alignment */
-            align-items: center; /* Align icon vertically */
-            margin-top: 1rem;
-        }
-        html[dir="ltr"] .project-links a {
-             margin-right: 0;
-             margin-left: 1rem;
-        }
-
-         .project-links a i {
-             margin-right: 0.3rem; /* Keep margin-right for RTL */
-             margin-left: 0.3rem; /* Add margin-left for LTR */
-          }
-          html[dir="ltr"] .project-links a i {
-             margin-right: 0;
-             margin-left: 0.3rem;
-          }
-
-         .project-links a:last-child {
-             margin-right: 0;
-             margin-left: 0;
-          }
-         /* ✅ Add space after video/github icon */
-         .project-links a i.fa-video,
-         .project-links a i.fa-github {
-             margin-left: 0.5rem; /* Adjust space as needed for RTL */
-          }
-          html[dir="ltr"] .project-links a i.fa-video,
-          html[dir="ltr"] .project-links a i.fa-github {
-             margin-left: 0;
-             margin-right: 0.5rem; /* Adjust space as needed for LTR */
-          }
-
-
-        /* --- Certifications Section --- */
-        .timeline-list { /* Renamed class for clarity */
-            list-style: none;
-            max-width: 900px;
-            margin: auto;
-            position: relative;
-            padding: 1rem 0;
-        }
-        /* Add a timeline line */
-        .timeline-list::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 14px; /* Position relative to the start in RTL */
-            left: auto;
-            width: 2px;
-            background-color: var(--medium-gray);
-        }
-        html[dir="ltr"] .timeline-list::before {
-            left: 14px;
-            right: auto;
-        }
-
-        .timeline-item { /* Renamed class */
-            background: var(--white-color);
-            padding: 1.5rem 2rem;
-            margin-bottom: 1.5rem; /* Increased spacing */
-            border-radius: 8px;
-            box-shadow: var(--shadow-sm);
-            position: relative;
-            padding-right: 45px; /* Space for icon in RTL */
-            padding-left: 1.5rem; /* Default padding */
-            border: 1px solid var(--border-color);
-            transition: box-shadow 0.3s ease;
-        }
-         html[dir="ltr"] .timeline-item {
-            padding-left: 45px;
-            padding-right: 1.5rem;
-           }
-
-        .timeline-item::before { /* Timeline dot */
-            content: '';
-            position: absolute;
-            top: 1.8rem; /* Adjust vertical position */
-            right: 8px; /* Position icon relative to start in RTL */
-            left: auto;
-            width: 15px;
-            height: 15px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            border: 3px solid var(--white-color);
-            z-index: 1;
-        }
-         html[dir="ltr"] .timeline-item::before {
-            left: 8px;
-            right: auto;
-           }
-
-        .timeline-item strong {
-            display: block;
-            font-size: 1.15rem;
-            color: var(--text-dark);
-            margin-bottom: 0.25rem;
-        }
-        .timeline-item span {
-            display: block;
-            font-size: 0.9rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        .timeline-item a.cert-link {
-             font-size: 0.85rem;
-             color: var(--primary-color);
-             text-decoration: underline;
-             display: inline-block; /* Allow margin */
-             margin-top: 0.5rem;
-           }
-
-
-        /* --- Contact Section --- */
-        #contact p {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            font-size: 1.1rem;
-        }
-        .contact-links {
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .contact-links a {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--secondary-color);
-            padding: 0.6rem 1.2rem; /* Adjust padding */
-            border: 1px solid var(--border-color);
-            border-radius: 25px; /* More rounded */
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-            display: inline-flex; /* Align icon and text */
-            align-items: center;
-            background-color: var(--white-color);
-        }
-         .contact-links a i { /* Style for icons inside contact links */
-             margin-right: 0.5rem; /* Space between icon and text for RTL */
-             margin-left: 0;
-             font-size: 1.1rem; /* Adjust icon size */
-          }
-          html[dir="ltr"] .contact-links a i {
-             margin-right: 0;
-             margin-left: 0.5rem;
-          }
-
-        .contact-links a:hover {
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: var(--dark-gray);
-            color: #9ca3af;
-            text-align: center;
-            padding: 2rem 0; /* Adjust padding */
-            margin-top: 3rem;
-        }
-
-        /* --- Responsive Design Adjustments --- */
-        @media (max-width: 768px) {
-            html { scroll-padding-top: 60px; } /* Adjust scroll padding */
-            header .container { flex-direction: column; text-align: center; }
-            header h1 { margin-bottom: 0.5rem; }
-            header nav ul { justify-content: center; margin-top: 0.5rem; }
-            header nav ul li { margin: 0 0.5rem; }
-            #lang-toggle-btn { margin-top: 0.5rem; margin-right: 0; } /* Adjust button margin on small screens */
-            .hero { padding: 6rem 1rem; }
-            .hero h2 { font-size: 2.2rem; }
-            .hero p { font-size: 1.05rem; }
-            .section { padding: 3.5rem 1rem; }
-            .section-title { font-size: 2rem; margin-bottom: 3rem; }
-            .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-            .timeline-item { padding: 1.2rem; padding-right: 35px; }
-            html[dir="ltr"] .timeline-item { padding-left: 35px; padding-right: 1.2rem; }
-            .timeline-item strong { margin-left: 0; }
-              .timeline-list::before { right: 10px; }
-                html[dir="ltr"] .timeline-list::before { left: 10px; right: auto; }
-                .timeline-item::before { right: 4px; width: 12px; height: 12px; }
-                html[dir="ltr"] .timeline-item::before { left: 4px; right: auto; }
-            .contact-links a { margin: 0.5rem 0.5rem; }
-            #skills .skills-grid, #soft-skills .skills-grid { grid-template-columns: repeat(2, 1fr); } /* 2 columns on smaller screens */
-        }
-         @media (max-width: 480px) {
-             header h1 { font-size: 1.4rem;}
-             header nav ul li a { font-size: 0.85rem; padding: 0.5rem 0.2rem;}
-             .hero { padding: 5rem 1rem;}
-             .hero h2 { font-size: 1.8rem;}
-             .hero p { font-size: 1rem;}
-             .hero .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem;}
-             .section-title { font-size: 1.8rem;}
-             .project-card-content { padding: 1.2rem;}
-             .project-card h3 { font-size: 1.15rem;}
-             .timeline-item strong { font-size: 1.1rem;}
-             .timeline-item span { font-size: 0.85rem;}
-             #skills .skills-grid, #soft-skills .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem;} /* Keep 2 columns */
-             #skills .skill-item i, #soft-skills .skill-item i { font-size: 2rem;}
-             #skills .skill-item h4, #soft-skills .skill-item h4 { font-size: 1rem;}
-           }
-
+        /* تأثير الظهور (Animation) */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        
+        .nav-link:hover { color: #fff; transition: color 0.3s; }
     </style>
 </head>
-<body>
+<body class="antialiased overflow-x-hidden selection:bg-blue-500/30">
 
-    <header class="header">
-        <div class="container">
-            <div class="logo">عبدالعزيز الثبيتي</div>
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-emerald-600/10 rounded-full blur-[120px]"></div>
+        <div class="absolute top-[40%] left-[50%] transform -translate-x-1/2 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div id="certModal" class="modal fixed inset-0 flex items-center justify-center bg-black/90 backdrop-blur-md p-4" onclick="closeModal()">
+        <div class="modal-content relative max-w-5xl w-full bg-slate-900 rounded-2xl border border-slate-700 overflow-hidden shadow-2xl flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center p-4 border-b border-slate-700 bg-slate-800/50 shrink-0">
+                <h3 id="modalTitle" class="text-xl font-bold text-white">عنوان الشهادة</h3>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-700 rounded-full">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="p-2 md:p-6 bg-slate-950 flex justify-center items-center overflow-auto flex-grow">
+                <img id="modalImage" src="" alt="Certificate" class="max-w-full max-h-full object-contain rounded shadow-lg">
+            </div>
+        </div>
+    </div>
+
+    <header class="glass-nav fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-2xl font-bold tracking-tight cursor-default">
+                <span class="gradient-text">💼 عبدالعزيز الثبيتي</span>
+            </div>
             <nav>
-                <ul>
-                    <li><button id="lang-toggle-btn" data-translate-key="langToggle">EN</button></li>
-                    <li><a href="#about" class="active" data-translate-key="navAbout">نبذة عني</a></li>
-                    <li><a href="#skills" data-translate-key="navSkills">المهارات</a></li>
-                    <li><a href="#soft-skills" data-translate-key="navSoftSkills">الكفاءات</a></li>
-                    <li><a href="#projects" data-translate-key="navProjects">المشاريع</a></li>
-                    <li><a href="#education" data-translate-key="navEducation">التعليم</a></li>
-                    <li><a href="#certifications" data-translate-key="navCerts">الشهادات</a></li>
-                    <li><a href="#contact" data-translate-key="navContact">تواصل معي</a></li>
+                <ul class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm font-medium text-slate-300">
+                    <li>
+                        <button id="lang-toggle-btn" data-translate-key="langToggle" class="px-3 py-1 rounded-full border border-slate-700 hover:bg-slate-800 hover:text-white transition-colors text-xs font-bold font-sans">EN</button>
+                    </li>
+                    <li><a href="#about" class="nav-link" data-translate-key="navAbout">نبذة</a></li>
+                    <li><a href="#projects" class="nav-link" data-translate-key="navProjects">المشاريع</a></li>
+                    <li><a href="#achievements" class="nav-link" data-translate-key="navAch">الهاكاثونات</a></li>
+                    <li><a href="#education" class="nav-link" data-translate-key="navEducation">التعليم</a></li>
+                    <li><a href="#certifications" class="nav-link" data-translate-key="navCerts">الشهادات</a></li>
+                    <li>
+                        <a href="#contact" class="hidden md:inline-block px-5 py-2 mr-2 rounded-full bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:bg-blue-600 hover:text-white transition-all shadow-lg shadow-blue-900/20" data-translate-key="navContact">تواصل معي</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="container">
-             <h2 data-translate-key="heroName">عبدالعزيز الثبيتي</h2>
-             <p class="headline" data-translate-key="heroTitle">عالم بيانات ومهندس ذكاء اصطناعي | مبرمج</p>
-             <a href="ABDULAZIZ ALTHOBAITI 2.pdf" download class="btn" data-translate-key="heroResumeBtn">تحميل السيرة الذاتية</a>
-        </div>
-    </section>
+    <main class="relative z-10 container mx-auto px-4 md:px-6 pt-32 pb-12">
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title" data-translate-key="aboutTitle">نبذة عني</h2>
-            <p data-translate-key="aboutP1">
-                خريج برمجة حاسوب، شغوفٌ بتخصص دورة حياة البيانات الكاملة؛ من هندسة وبناء خطوط الأنابيب، مرورًا بالتنظيم والتحليل، وصولًا إلى تصورها كلوحات معلومات تفاعلية تدعم القرارات. صقلتُ هذه المهارات في معسكرات تدريبية مكثفة في علوم البيانات من SDAIA وأكاديمية طويق، حيث نفّذتُ العديد من المشاريع العملية. ينصبُّ تركيزي على تحويل البيانات الخام إلى أصول قيّمة، وتقديم رؤى واضحة تُحفّز نموّ المؤسسة.
+        <section id="hero" class="min-h-[85vh] flex flex-col justify-center items-center text-center animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-slate-800/50 border border-slate-700/50 text-blue-300 text-sm font-medium backdrop-blur-md">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                <span data-translate-key="heroBadge">مرحبًا بك في ملف أعمالي</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-8 tracking-tight leading-tight text-white">
+                <span data-translate-key="heroName">عبدالعزيز الثبيتي</span>
+            </h1>
+            <p class="text-xl md:text-3xl text-slate-400 mb-10 max-w-3xl mx-auto font-light leading-relaxed" data-translate-key="heroTitle">
+                عالم بيانات ومهندس ذكاء اصطناعي | <span class="text-emerald-400 font-semibold">مبرمج</span>
             </p>
-        </div>
-    </section>
+            <div class="flex flex-col sm:flex-row justify-center gap-5">
+                <a href="#projects" class="px-8 py-4 rounded-full bg-white text-slate-900 font-bold hover:bg-slate-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] transform hover:-translate-y-1 flex items-center justify-center gap-2" data-translate-key="navProjects">
+                    <i data-lucide="folder-open" class="w-5 h-5"></i> تصفح المشاريع
+                </a>
+                <a href="ABDULAZIZ ALTHOBAITI 2.pdf" download class="px-8 py-4 rounded-full bg-slate-800/50 border border-slate-600 text-white font-bold hover:bg-slate-700 transition-all backdrop-blur-sm flex items-center justify-center gap-2 group">
+                    <span data-translate-key="heroResumeBtn">تحميل السيرة الذاتية</span>
+                    <i data-lucide="download" class="w-5 h-5 group-hover:translate-y-1 transition-transform"></i>
+                </a>
+            </div>
+        </section>
 
-    <section id="skills" class="section section-alt-bg">
-        <div class="container">
-            <h2 class="section-title" data-translate-key="skillsTitle">المهارات التقنية</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fab fa-python"></i>
-                    <h4 data-translate-key="skillPython">Python</h4>
+        <section id="about" class="py-20">
+            <div class="max-w-5xl mx-auto glass-card rounded-[2.5rem] p-8 md:p-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center relative inline-block w-full">
+                    <span class="relative z-10 gradient-text" data-translate-key="aboutTitle">نبذة عني</span>
+                </h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/3 flex justify-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-tr from-blue-600 to-emerald-500 p-1 shadow-2xl shadow-blue-900/30">
+                            <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-6xl">👨‍💻</div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3 text-center md:text-start rtl:md:text-right">
+                        <p class="text-lg md:text-xl leading-loose text-slate-300 font-light" data-translate-key="aboutP1">
+                           خريج برمجة حاسوب وشغوف بعلم البيانات والذكاء الاصطناعي، مع تركيز خاص على نماذج اللغة الكبيرة (LLMs) وتطبيقاتها العملية. أعمل على بناء حلول ذكية تبدأ من فهم المشكلة وتحليل البيانات، مرورًا بتطوير النماذج وتقييمها، وصولًا إلى تقديم نتائج واضحة ولوحات معلومات تدعم اتخاذ القرار. هدفي تحويل البيانات والأفكار إلى منتجات AI قابلة للاستخدام وتحقق أثرًا ملموسًا.
+                        </p>
+                    </div>
                 </div>
-                 <div class="skill-item">
-                    <i class="fas fa-brain"></i>
-                    <h4 data-translate-key="skillML">تعلم الآلة</h4>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4" data-translate-key="skillsTitle">المهارات التقنية</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center group">
+                    <i class="fab fa-python text-4xl text-yellow-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-slate-200" data-translate-key="skillPython">Python</h4>
                 </div>
-                 <div class="skill-item">
-                    <i class="fas fa-network-wired"></i>
-                    <h4 data-translate-key="skillDL">التعلم العميق</h4>
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center group">
+                    <i class="fas fa-brain text-4xl text-pink-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-slate-200" data-translate-key="skillML">Machine Learning</h4>
                 </div>
-                 <div class="skill-item">
-                    <i class="fas fa-eye"></i>
-                    <h4 data-translate-key="skillCV">رؤية الحاسب</h4>
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center group">
+                    <i class="fas fa-network-wired text-4xl text-indigo-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-slate-200" data-translate-key="skillDL">Deep Learning</h4>
                 </div>
-                 <div class="skill-item">
-                    <i class="fas fa-laptop-code"></i>
-                    <h4 data-translate-key="skillSD">تطوير البرمجيات (مع AI)</h4>
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center group">
+                    <i class="fas fa-robot text-4xl text-teal-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-slate-200" data-translate-key="skillLLM">LLMs</h4>
                 </div>
-                 <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <h4 data-translate-key="skillSQL">SQL</h4>
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center group">
+                    <span class="text-4xl mb-4 group-hover:scale-110 transition-transform">🤗</span>
+                    <h4 class="font-bold text-slate-200" data-translate-key="skillHF">Hugging Face</h4>
                 </div>
-                <div class="skill-item">
-                    <i class="fas fa-chart-bar"></i>
-                    <h4 data-translate-key="skillPowerBI">Power BI</h4>
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center group">
+                    <i class="fas fa-database text-4xl text-blue-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-slate-200" data-translate-key="skillSQL">SQL</h4>
                 </div>
-                 <div class="skill-item">
-                    <i class="fas fa-chart-line"></i>
-                    <h4 data-translate-key="skillDA">تحليل البيانات</h4>
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center group">
+                    <i class="fas fa-chart-bar text-4xl text-yellow-600 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-slate-200" data-translate-key="skillPowerBI">Power BI</h4>
                 </div>
+                <div class="glass-card p-6 rounded-2xl flex flex-col items-center group">
+                    <i class="fas fa-chart-line text-4xl text-green-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-slate-200" data-translate-key="skillDA">Data Analysis</h4>
+                </div>
+            </div>
+
+            <div id="soft-skills">
+                <h3 class="text-2xl md:text-3xl font-bold text-center text-white mb-10" data-translate-key="softSkillsTitle">الكفاءات الشخصية</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-blue-500 hover:shadow-blue-500/10 transition-all">
+                        <div class="flex items-center gap-3 mb-3 text-blue-400">
+                            <i class="fas fa-lightbulb text-xl"></i>
+                            <h4 class="font-bold text-lg text-white" data-translate-key="softSkillPS">حل المشكلات</h4>
+                        </div>
+                        <p class="text-slate-400 text-sm" data-translate-key="softSkillPSDesc">تحليل التحديات المعقدة وتطبيق المنهجيات المناسبة لإيجاد حلول فعالة.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-emerald-500 hover:shadow-emerald-500/10 transition-all">
+                        <div class="flex items-center gap-3 mb-3 text-emerald-400">
+                            <i class="fas fa-users text-xl"></i>
+                            <h4 class="font-bold text-lg text-white" data-translate-key="softSkillTeam">العمل الجماعي</h4>
+                        </div>
+                        <p class="text-slate-400 text-sm" data-translate-key="softSkillTeamDesc">التعاون بفعالية مع أعضاء الفريق لتحقيق الأهداف المشتركة.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-purple-500 hover:shadow-purple-500/10 transition-all">
+                        <div class="flex items-center gap-3 mb-3 text-purple-400">
+                            <i class="fas fa-comments text-xl"></i>
+                            <h4 class="font-bold text-lg text-white" data-translate-key="softSkillComm">التواصل الفعال</h4>
+                        </div>
+                        <p class="text-slate-400 text-sm" data-translate-key="softSkillCommDesc">شرح الأفكار التقنية المعقدة بوضوح لمختلف الجماهير.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-amber-500 hover:shadow-amber-500/10 transition-all">
+                        <div class="flex items-center gap-3 mb-3 text-amber-400">
+                            <i class="fas fa-brain text-xl"></i>
+                            <h4 class="font-bold text-lg text-white" data-translate-key="softSkillCrit">التفكير النقدي</h4>
+                        </div>
+                        <p class="text-slate-400 text-sm" data-translate-key="softSkillCritDesc">تقييم المعلومات بموضوعية وتحليل الافتراضات للوصول إلى استنتاجات منطقية.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-cyan-500 hover:shadow-cyan-500/10 transition-all">
+                        <div class="flex items-center gap-3 mb-3 text-cyan-400">
+                            <i class="fas fa-book-open-reader text-xl"></i>
+                            <h4 class="font-bold text-lg text-white" data-translate-key="softSkillLearn">التعلم المستمر</h4>
+                        </div>
+                        <p class="text-slate-400 text-sm" data-translate-key="softSkillLearnDesc">الالتزام بتطوير المهارات ومواكبة أحدث التقنيات في مجال الذكاء الاصطناعي.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-rose-500 hover:shadow-rose-500/10 transition-all">
+                        <div class="flex items-center gap-3 mb-3 text-rose-400">
+                            <i class="fas fa-clock text-xl"></i>
+                            <h4 class="font-bold text-lg text-white" data-translate-key="softSkillTime">إدارة الوقت</h4>
+                        </div>
+                        <p class="text-slate-400 text-sm" data-translate-key="softSkillTimeDesc">تنظيم المهام وتحديد الأولويات لإنجاز العمل بكفاءة وضمن الجداول الزمنية.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl md:text-5xl font-bold text-center text-white mb-16 gradient-text" data-translate-key="projectsTitle">المشاريع المتميزة</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col group border border-blue-500/30">
+                    <div class="relative h-52 overflow-hidden bg-slate-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/40 to-slate-900 z-0"></div>
+                        <i class="fas fa-hand-holding-dollar text-6xl text-blue-400 z-10 opacity-80 group-hover:scale-110 transition-transform duration-700"></i>
+                         </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2" data-translate-key="projInflowTitle">Inflow (Fintech)</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="projInflowDesc">مشروع فائز بالمركز الثاني. منصة تمويل مدمج (Embedded Finance) تستخدم الذكاء الاصطناعي لتقييم الائتمان.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-2 py-1 bg-blue-500/10 text-blue-300 text-xs rounded border border-blue-500/20">React</span>
+                            <span class="px-2 py-1 bg-blue-500/10 text-blue-300 text-xs rounded border border-blue-500/20">API</span>
+                            <span class="px-2 py-1 bg-blue-500/10 text-blue-300 text-xs rounded border border-blue-500/20">AI Credit Score</span>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50">
+                            <a href="#" class="text-slate-500 cursor-not-allowed font-bold text-sm flex items-center gap-2 group/link">
+                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود (قريباً)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col group border border-emerald-500/30">
+                    <div class="relative h-52 overflow-hidden bg-slate-900 flex items-center justify-center">
+                         <div class="absolute inset-0 bg-gradient-to-tr from-emerald-900/40 to-slate-900 z-0"></div>
+                        <i class="fas fa-microchip text-6xl text-emerald-400 z-10 opacity-80 group-hover:scale-110 transition-transform duration-700"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2" data-translate-key="projLLMTitle">Arabic LLM Fine-tuning</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="projLLMDesc">تحسين نموذج Qwen2.5-0.5B على بيانات CIDAR محلياً لضمان الخصوصية والاستقلالية عن السحابة.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded border border-emerald-500/20">Hugging Face</span>
+                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded border border-emerald-500/20">Transformers</span>
+                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded border border-emerald-500/20">Local LLM</span>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50">
+                            <a href="#" class="text-slate-500 cursor-not-allowed font-bold text-sm flex items-center gap-2 group/link">
+                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود (قريباً)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="relative h-52 overflow-hidden bg-slate-900">
+                        <img src="generated-image-1753680420715.png" alt="Churn" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Churn+Prediction'">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2" data-translate-key="projChurnTitle">التنبؤ بمغادرة العملاء</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="projChurnDesc">تحليل بيانات عملاء الاتصالات وبناء نموذج تنبؤي (XGBoost) لتقليل الخسائر.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">XGBoost</span>
+                            <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">Analysis</span>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50">
+                            <a href="https://github.com/abdu1z1z/Churn_Prediction/tree/main" target="_blank" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-2 group/link">
+                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="relative h-52 overflow-hidden bg-slate-900">
+                        <img src="IMG_DashBoard.png" alt="Sales" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Sales+Dash'">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2" data-translate-key="projSalesTitle">لوحة مبيعات Power BI</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="projSalesDesc">لوحة تفاعلية لتحليل المبيعات واكتشاف الأنماط الزمنية.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-2 py-1 bg-yellow-500/10 text-yellow-300 text-xs rounded border border-yellow-500/20">Power BI</span>
+                            <span class="px-2 py-1 bg-yellow-500/10 text-yellow-300 text-xs rounded border border-yellow-500/20">DAX</span>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50">
+                            <a href="https://youtu.be/XmLDUNFrapY" target="_blank" class="text-white hover:text-red-400 font-bold text-sm flex items-center gap-2 group/link">
+                                <i data-lucide="youtube" class="w-4 h-4"></i> <span data-translate-key="demoLink">فيديو</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="relative h-52 overflow-hidden bg-slate-900">
+                        <img src="Flux_Dev_Create_a_professional_and_dynamic_cover_image_for_a_f_1.jpg" alt="BallVision" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=BallVision'">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2" data-translate-key="proj1Title">BallVision</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="proj1Desc">تحليل تكتيكي لكرة القدم باستخدام الرؤية الحاسوبية لاستخراج بيانات الضغط والمساحات.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded border border-emerald-500/20">YOLOv8</span>
+                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded border border-emerald-500/20">OpenCV</span>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50 flex gap-4">
+                            <a href="https://youtu.be/5qhzZ_sSixo1" target="_blank" class="text-white hover:text-red-400 text-sm flex items-center gap-1"><i data-lucide="video" class="w-4 h-4"></i> فيديو</a>
+                            <a href="https://github.com/abdu1z1z/BallVisionSCAI.git" target="_blank" class="text-white hover:text-blue-400 text-sm flex items-center gap-1"><i class="fab fa-github"></i> كود</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="relative h-52 overflow-hidden bg-slate-900">
+                        <img src="Gemini_Generated_Image_z25yhjz25yhjz25y.png" alt="Pneumonia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Medical+AI'">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2" data-translate-key="projPneumoniaTitle">كشف الالتهاب الرئوي</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="projPneumoniaDesc">نموذج تعلم عميق للأشعة السينية باستخدام Transfer Learning.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-2 py-1 bg-purple-500/10 text-purple-300 text-xs rounded border border-purple-500/20">PyTorch</span>
+                            <span class="px-2 py-1 bg-purple-500/10 text-purple-300 text-xs rounded border border-purple-500/20">VGG16</span>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50">
+                            <a href="https://github.com/abdu1z1z/CNN-Lung-Analysis" target="_blank" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-2">
+                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="relative h-52 overflow-hidden bg-slate-900">
+                        <img src="DMovie.jpg" alt="Movie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Rec+System'">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2" data-translate-key="proj3Title">نظام توصية الأفلام</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="proj3Desc">بناء نظام توصية شخصي باستخدام Collaborative Filtering و Flask API.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">Flask</span>
+                            <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">API</span>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50 flex gap-4">
+                             <a href="https://youtu.be/5qhzZ_sSixo4" target="_blank" class="text-white hover:text-red-400 text-sm flex items-center gap-1"><i data-lucide="video" class="w-4 h-4"></i> فيديو</a>
+                             <a href="https://github.com/abdu1z1z/RecommendSystem" target="_blank" class="text-white hover:text-blue-400 text-sm flex items-center gap-1"><i class="fab fa-github"></i> كود</a>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="relative h-52 overflow-hidden bg-slate-900">
+                        <img src="DLoan.jpg" alt="Loan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Loan+AI'">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2" data-translate-key="proj4Title">تنبؤ حالة القروض</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="proj4Desc">تصنيف طلبات القروض والتنبؤ بالمخاطر باستخدام SVM.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-2 py-1 bg-blue-500/10 text-blue-300 text-xs rounded border border-blue-500/20">SVM</span>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50">
+                            <a href="https://github.com/abdu1z1z/LoanStatusBldModl" target="_blank" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-2">
+                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="achievements" class="py-20 animate-fade-in border-t border-slate-800/50">
+             <header class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight" data-translate-key="achievementsTitle">
+                     إنجازات <span class="gradient-text">الهاكاثونات</span>
+                </h2>
+                <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light">
+                    استعراض لأبرز المشاريع التي تم تطويرها في بيئة تنافسية مكثفة.
+                </p>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <article class="glass-card rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 bg-gradient-to-r from-slate-100 via-gray-300 to-slate-400 text-slate-900 text-[10px] md:text-xs font-black px-6 py-2.5 rounded-br-2xl shadow-xl flex items-center gap-2 tracking-widest uppercase z-20">
+                        <i data-lucide="trophy" class="w-4 h-4"></i>
+                        <span data-translate-key="achBadge2nd">المركز الثاني</span>
+                    </div>
+
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="w-16 h-16 bg-blue-500/10 border border-blue-500/20 rounded-2xl flex items-center justify-center shadow-inner">
+                            <i data-lucide="banknote" class="w-9 h-9 text-blue-400"></i>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 mb-8">
+                        <h3 class="text-3xl md:text-4xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300" data-translate-key="ach1Title">Inflow</h3>
+                        <p class="text-slate-400 leading-relaxed text-lg font-light" data-translate-key="ach1Desc">
+                            منصة متكاملة تركز على مفهوم Embedded Finance، تتيح تمويل الشركات الناشئة مباشرة عبر منصات SaaS.
+                        </p>
+                    </div>
+
+                    <button onclick="openModal('https://placehold.co/800x600/1e293b/FFF?text=Inflow+Winner+Certificate', 'Inflow Hackathon Certificate')" class="w-full md:w-auto flex items-center justify-center gap-3 px-6 py-3 rounded-xl bg-slate-800/50 hover:bg-blue-600/20 border border-slate-700 hover:border-blue-500/50 transition-all group/btn">
+                         <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover/btn:bg-blue-500 group-hover/btn:text-white transition-colors">
+                            <i data-lucide="eye" class="w-4 h-4"></i>
+                        </div>
+                        <span class="font-bold text-slate-300 group-hover/btn:text-white" data-translate-key="viewCert">عرض شهادة الفوز</span>
+                    </button>
+                    <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-blue-500/10 transition-all duration-700"></div>
+                </article>
+
+                <article class="glass-card rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group">
+                     <div class="absolute top-0 left-0 bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600 text-white text-[10px] md:text-xs font-black px-6 py-2.5 rounded-br-2xl shadow-xl flex items-center gap-2 tracking-widest uppercase z-20">
+                        <i data-lucide="medal" class="w-4 h-4"></i>
+                        <span data-translate-key="achBadgeFinalist">متأهل للنهائيات</span>
+                    </div>
+
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center justify-center shadow-inner">
+                            <i data-lucide="layout-grid" class="w-9 h-9 text-emerald-400"></i>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 mb-8">
+                        <h3 class="text-3xl md:text-4xl font-bold text-white group-hover:text-emerald-400 transition-colors duration-300" data-translate-key="ach2Title">BallVision</h3>
+                        <p class="text-slate-400 leading-relaxed text-lg font-light" data-translate-key="ach2Desc">
+                            منصة تحليلية متقدمة في كرة القدم لاستخراج البيانات غير المرئية لدعم القرارات الفنية.
+                        </p>
+                    </div>
+
+                    <button onclick="openModal('https://placehold.co/800x600/1e293b/FFF?text=SCAI+Hackathon+Certificate', 'SCAI Hackathon Certificate')" class="w-full md:w-auto flex items-center justify-center gap-3 px-6 py-3 rounded-xl bg-slate-800/50 hover:bg-emerald-600/20 border border-slate-700 hover:border-emerald-500/50 transition-all group/btn">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover/btn:bg-emerald-500 group-hover/btn:text-white transition-colors">
+                           <i data-lucide="eye" class="w-4 h-4"></i>
+                       </div>
+                       <span class="font-bold text-slate-300 group-hover/btn:text-white" data-translate-key="viewCert">عرض شهادة المشاركة</span>
+                   </button>
+                    <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-emerald-500/10 transition-all duration-700"></div>
+                </article>
+            </div>
+        </section>
+
+        <section id="education" class="py-20 border-t border-slate-800/50">
+            <div class="text-center mb-16">
+                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-bold mb-4">
+                    <i data-lucide="graduation-cap" class="w-3 h-3"></i> المسار الأكاديمي
+                </div>
+                 <h2 class="text-3xl md:text-5xl font-bold text-white" data-translate-key="educationTitle">التعليم الأكاديمي</h2>
+             </div>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                 <div class="glass-card p-8 rounded-3xl border-r-4 border-r-blue-600 relative overflow-hidden group hover:border-blue-500/50 transition-all">
+                     <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-600/20 flex items-center justify-center text-blue-400 shrink-0">
+                            <i class="fas fa-university text-2xl"></i>
+                        </div>
+                        <div>
+                             <h3 class="text-2xl font-bold text-white mb-2" data-translate-key="eduBachelors">بكالوريوس علوم البيانات</h3>
+                             <p class="text-blue-300 font-medium text-lg mb-1" data-translate-key="eduUniversity">الجامعة السعودية الإلكترونية - حالياً</p>
+                             <span class="inline-block bg-blue-900/40 text-blue-200 text-xs px-3 py-1 rounded-full border border-blue-500/20 mt-2">Current Student</span>
+                        </div>
+                     </div>
                  </div>
-        </div>
-    </section>
+                 <div class="glass-card p-8 rounded-3xl border-r-4 border-r-amber-500 relative overflow-hidden group hover:border-amber-500/50 transition-all">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-600/20 flex items-center justify-center text-amber-400 shrink-0">
+                            <i class="fas fa-scroll text-2xl"></i>
+                        </div>
+                        <div>
+                             <h3 class="text-2xl font-bold text-white mb-2" data-translate-key="eduDegree">دبلوم برمجة حاسب</h3>
+                             <p class="text-amber-300 font-medium text-lg mb-1" data-translate-key="eduInstitute">معهد الإدارة العامة - 2023</p>
+                             <span class="inline-block bg-amber-900/40 text-amber-200 text-xs px-3 py-1 rounded-full border border-amber-500/20 mt-2 font-bold">GPA: 4.57 / 5.00 🌟</span>
+                        </div>
+                     </div>
+                 </div>
+             </div>
+        </section>
 
-     <section id="soft-skills" class="section">
-        <div class="container">
-            <h2 class="section-title" data-translate-key="softSkillsTitle">الكفاءات الشخصية</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fas fa-lightbulb"></i>
-                    <h4 data-translate-key="softSkillPS">حل المشكلات</h4>
-                    <p data-translate-key="softSkillPSDesc">تحليل التحديات المعقدة وتطبيق المنهجيات المناسبة لإيجاد حلول فعالة ومبتكرة.</p>
+        <section id="certifications" class="py-20">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-400 text-xs font-bold mb-4">
+                    <i data-lucide="award" class="w-3 h-3"></i> التطوير المهني
                 </div>
-                <div class="skill-item">
-                    <i class="fas fa-users"></i>
-                    <h4 data-translate-key="softSkillTeam">العمل الجماعي</h4>
-                    <p data-translate-key="softSkillTeamDesc">التعاون بفعالية مع أعضاء الفريق لتحقيق الأهداف المشتركة وتبادل المعرفة.</p>
-                </div>
-                 <div class="skill-item">
-                    <i class="fas fa-comments"></i>
-                    <h4 data-translate-key="softSkillComm">التواصل الفعال</h4>
-                    <p data-translate-key="softSkillCommDesc">شرح الأفكار التقنية المعقدة بوضوح وتقديم النتائج بشكل مفهوم لمختلف الجماهير.</p>
-                </div>
-                 <div class="skill-item">
-                    <i class="fas fa-brain"></i>
-                    <h4 data-translate-key="softSkillCrit">التفكير النقدي</h4>
-                    <p data-translate-key="softSkillCritDesc">تقييم المعلومات بموضوعية وتحليل الافتراضات للوصول إلى استنتاجات منطقية.</p>
-                </div>
-                 <div class="skill-item">
-                    <i class="fas fa-book-open-reader"></i>
-                    <h4 data-translate-key="softSkillLearn">التعلم المستمر</h4>
-                    <p data-translate-key="softSkillLearnDesc">الالتزام بتطوير المهارات ومواكبة أحدث التقنيات في مجال الذكاء الاصطناعي وتحليل البيانات.</p>
-                </div>
-                 <div class="skill-item">
-                    <i class="fas fa-clock"></i>
-                    <h4 data-translate-key="softSkillTime">إدارة الوقت</h4>
-                    <p data-translate-key="softSkillTimeDesc">تنظيم المهام وتحديد الأولويات لإنجاز العمل بكفاءة وضمن الجداول الزمنية.</p>
-                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white" data-translate-key="certsTitle">الشهادات والمعسكرات</h2>
             </div>
-        </div>
-    </section>
-
-
-
-
-
-     
-
-    <section id="projects" class="section section-alt-bg">
-        <div class="container">
-            <h2 class="section-title" data-translate-key="projectsTitle">المشاريع</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <img src="generated-image-1753680420715.png" alt="Customer Churn Prediction">
-                    <div class="project-card-content">
-                        <h3 data-translate-key="projChurnTitle">التنبؤ بمغادرة العملاء (Customer Churn)</h3>
-                        <p data-translate-key="projChurnDesc">
-                            مشروع متكامل يحلل بيانات عملاء شركة اتصالات لبناء نموذج تعلم آلة يتنبأ بالعملاء المعرضين لخطر المغادرة. يتضمن تنظيف البيانات، هندسة الميزات، معالجة عدم التوازن، وتقييم نماذج متعددة (XGBoost) للوصول إلى توصيات عمل استراتيجية.
-                        </p>
-                        <div class="project-tags">
-                            <span>Machine Learning</span>
-                            <span>Classification</span>
-                            <span>XGBoost</span>
-                            <span>Data Analysis</span>
-                            <span>Feature Engineering</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-pink-500 hover:shadow-pink-500/10 cursor-pointer group transition-all" onclick="openModal('IMG_5479_page-0001-min.jpg', 'T5 Data Science Bootcamp')">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-pink-500/20 flex items-center justify-center text-pink-400">
+                            <i class="fas fa-database text-xl"></i>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/abdu1z1z/Churn_Prediction/tree/main" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
-                        </div>
+                        <span class="text-xs font-bold bg-pink-500/10 text-pink-300 px-2 py-1 rounded border border-pink-500/20">3 Months</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors" data-translate-key="cert1Title">معسكر علوم البيانات T5</h4>
+                    <p class="text-sm text-slate-400 mb-4" data-translate-key="cert1Issuer">SDAIA & Tuwaiq</p>
+                    <div class="flex items-center gap-2 text-xs text-pink-400 font-bold mt-auto">
+                        <i data-lucide="eye" class="w-3 h-3"></i> عرض الشهادة
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="IMG_DashBoard.png" alt="Sales Analysis Dashboard">
-                    <div class="project-card-content">
-                        <h3 data-translate-key="projSalesTitle">لوحة معلومات تحليل المبيعات</h3>
-                        <p data-translate-key="projSalesDesc">
-                            لوحة معلومات تفاعلية تم إنشاؤها باستخدام Power BI لتحليل بيانات المبيعات. تستكشف المؤشرات الرئيسية مثل أفضل المنتجات مبيعاً، والمبيعات حسب المدينة، والأنماط الزمنية للمبيعات لدعم اتخاذ القرار.
-                        </p>
-                        <div class="project-tags">
-                            <span>Power BI</span>
-                            <span>Data Analysis</span>
-                            <span>Data Visualization</span>
-                            <span>DAX</span>
+                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-purple-600 hover:shadow-purple-500/10 cursor-pointer group transition-all" onclick="openModal('https://placehold.co/800x600/1e293b/FFF?text=AI+Bootcamp+Cert', 'AI Bootcamp')">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center text-purple-400">
+                            <i class="fas fa-brain text-xl"></i>
                         </div>
-                        <div class="project-links">
-                            <a href="https://youtu.be/XmLDUNFrapY" target="_blank"><i class="fas fa-video"></i> <span data-translate-key="demoLink">عرض توضيحي</span></a>
-                        </div>
+                        <span class="text-xs font-bold bg-purple-600/10 text-purple-300 px-2 py-1 rounded border border-purple-500/20">2 Months</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors" data-translate-key="cert2Title">معسكر الذكاء الاصطناعي</h4>
+                    <p class="text-sm text-slate-400 mb-4" data-translate-key="cert2Issuer">SDAIA & Tuwaiq</p>
+                    <div class="flex items-center gap-2 text-xs text-purple-400 font-bold mt-auto">
+                        <i data-lucide="eye" class="w-3 h-3"></i> عرض الشهادة
                     </div>
                 </div>
-
-                
-                <div class="project-card">
-                    <img src="Flux_Dev_Create_a_professional_and_dynamic_cover_image_for_a_f_1.jpg" alt="BallVision">
-                    <div class="project-card-content">
-                        <h3 data-translate-key="proj1Title">BallVision (نظام تحليل أداء كرة القدم)</h3>
-                        <p data-translate-key="proj1Desc">
-                            نظام يستخرج إحصائيات وأنماط تكتيكية جوهرية يصعب قياسها يدوياً من فيديوهات المباريات (مثل الضغط، المساحات، العزلة)، بهدف تحسين عملية اتخاذ القرار للمدربين والمحللين.
-                        </p>
-                        <div class="project-tags">
-                            <span>Computer Vision</span>
-                            <span>Object Tracking</span>
-                            <span>YOLOv8</span>
-                            <span>Python</span>
-                            <span>OpenCV</span>
-                            <span>Data Analysis</span>
+                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-red-600 hover:shadow-red-500/10 cursor-pointer group transition-all" onclick="openModal('Screenshot 2025-05-19 115145.png', 'Oracle AI Vector Search')">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-red-600/20 flex items-center justify-center text-red-400">
+                            <i class="fas fa-certificate text-xl"></i>
                         </div>
-                        <div class="project-links">
-                             <a href="https://youtu.be/5qhzZ_sSixo1" target="_blank"><i class="fas fa-video"></i> <span data-translate-key="demoLink">عرض توضيحي</span></a>
-                            <a href="https://github.com/abdu1z1z/BallVisionSCAI.git" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
-                        </div>
+                        <span class="text-xs font-bold bg-red-600/10 text-red-300 px-2 py-1 rounded border border-red-500/20">Professional</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-red-400 transition-colors" data-translate-key="cert6Title">Oracle AI Vector Search</h4>
+                    <p class="text-sm text-slate-400 mb-4" data-translate-key="cert6Issuer">Oracle</p>
+                    <div class="flex items-center gap-2 text-xs text-red-400 font-bold mt-auto">
+                        <i data-lucide="eye" class="w-3 h-3"></i> عرض الشهادة
                     </div>
                 </div>
+                 <div class="glass-card p-6 rounded-2xl border-t-4 border-t-blue-500 hover:shadow-blue-500/10 cursor-pointer group transition-all" onclick="openModal('IMG_5675.jpg', 'IBM Intro to AI')">
+                    <div class="mb-4 text-blue-400"><i class="fas fa-laptop-code text-2xl"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-1" data-translate-key="cert3Title">Intro to AI</h4>
+                    <p class="text-sm text-slate-400 mb-3" data-translate-key="cert3Issuer">IBM (Coursera)</p>
+                    <span class="text-xs text-blue-400 group-hover:underline">عرض</span>
+                </div>
+                 <div class="glass-card p-6 rounded-2xl border-t-4 border-t-yellow-500 hover:shadow-yellow-500/10 cursor-pointer group transition-all" onclick="openModal('CourseraPowerBi_page-0001.jpg', 'Power BI')">
+                    <div class="mb-4 text-yellow-400"><i class="fas fa-chart-bar text-2xl"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-1" data-translate-key="cert4Title">Data Visualization</h4>
+                    <p class="text-sm text-slate-400 mb-3" data-translate-key="cert4Issuer">Coursera</p>
+                    <span class="text-xs text-yellow-400 group-hover:underline">عرض</span>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-green-500 hover:shadow-green-500/10 cursor-pointer group transition-all" onclick="openModal('CourseraEXCEL_page-0001.jpg', 'Excel Advanced')">
+                    <div class="mb-4 text-green-400"><i class="fas fa-file-excel text-2xl"></i></div>
+                    <h4 class="text-lg font-bold text-white mb-1" data-translate-key="cert5Title">Excel Advanced</h4>
+                    <p class="text-sm text-slate-400 mb-3" data-translate-key="cert5Issuer">Coursera</p>
+                    <span class="text-xs text-green-400 group-hover:underline">عرض</span>
+                </div>
+             </div>
+        </section>
 
-                <div class="project-card">
-                    <img src="Gemini_Generated_Image_z25yhjz25yhjz25y.png" alt="Pneumonia Detection from X-Rays">
-                    <div class="project-card-content">
-                        <h3 data-translate-key="projPneumoniaTitle">الكشف عن الالتهاب الرئوي بصور الأشعة</h3>
-                        <p data-translate-key="projPneumoniaDesc">
-                            نموذج تعلم عميق يستخدم تقنية التعلم بالنقل (Transfer Learning) مع بنية VGG16 المدربة مسبقًا لتصنيف صور الأشعة السينية للصدر بدقة عالية. تم تجميد طبقات القاعدة وتدريب مصنف مخصص لتحقيق أداء فعال على البيانات الطبية.
-                        </p>
-                        <div class="project-tags">
-                            <span>Deep Learning</span>
-                            <span>Computer Vision</span>
-                            <span>PyTorch</span>
-                            <span>Transfer Learning</span>
-                            <span>VGG16</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/abdu1z1z/CNN-Lung-Analysis" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
-                        </div>
+        <section id="contact" class="py-24 text-center border-t border-slate-800/50">
+            <div class="glass-card max-w-3xl mx-auto p-12 rounded-[3rem] relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white" data-translate-key="contactTitle">تواصل معي</h2>
+                    <p class="text-xl text-slate-400 mb-10" data-translate-key="contactDesc">
+                        مهتم بمناقشة المشاريع أو الفرص؟ لا تتردد في التواصل!
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="mailto:abdulaziz.althubaiti@gmail.com" class="px-6 py-3 rounded-full bg-white text-slate-900 font-bold hover:bg-blue-50 transition-colors flex items-center gap-2">
+                            <i data-lucide="mail" class="w-5 h-5"></i> <span data-translate-key="contactEmail">Email</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abdulazizlinkai/" target="_blank" class="px-6 py-3 rounded-full bg-[#0077b5] text-white font-bold hover:bg-[#006097] transition-colors flex items-center gap-2">
+                            <i class="fab fa-linkedin text-lg"></i> <span data-translate-key="contactLinkedIn">LinkedIn</span>
+                        </a>
+                         <a href="https://github.com/abdu1z1z" target="_blank" class="px-6 py-3 rounded-full bg-slate-800 text-white font-bold hover:bg-slate-700 transition-colors border border-slate-600 flex items-center gap-2">
+                            <i class="fab fa-github text-lg"></i> <span data-translate-key="contactGitHub">GitHub</span>
+                        </a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="DBALLjpg.jpg" alt="BallTrack">
-                    <div class="project-card-content">
-                        <h3 data-translate-key="projBallTrackTitle">BallTrack (نظام تتبع الكرة)</h3>
-                        <p data-translate-key="projBallTrackDesc">
-                            تطبيق متخصص في تتبع حركة الكرة بدقة عالية في مباريات كرة القدم باستخدام YOLO، مع التركيز على استخراج بيانات المسار والسرعة لتحليل أداء اللاعبين الفردي.
-                        </p>
-                        <div class="project-tags">
-                            <span>Computer Vision</span>
-                            <span>Object Tracking</span>
-                            <span>YOLO</span>
-                            <span>Python</span>
-                            <span>OpenCV</span>
-                        </div>
-                        <div class="project-links">
-                             <a href="https://youtu.be/5qhzZ_sSixo2" target="_blank"><i class="fas fa-video"></i> <span data-translate-key="demoLink">عرض توضيحي</span></a>
-                            <a href="https://github.com/abdu1z1z/TrackBall" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="DGhirasr.jpg" alt="AI Image Classifier">
-                    <div class="project-card-content">
-                        <h3 data-translate-key="proj2Title">AI Image Classifier (مصنف صور النباتات)</h3>
-                        <p data-translate-key="proj2Desc">
-                            تطوير وتدريب نموذج تعلم عميق باستخدام TensorFlow/Keras لتصنيف صور النباتات المحلية بدقة تزيد عن 30 فئة. يقدم التطبيق معلومات تفصيلية ومواقع التواجد، مساهماً في التوثيق البيئي.
-                        </p>
-                        <div class="project-tags">
-                            <span>Deep Learning</span>
-                            <span>Computer Vision</span>
-                            <span>TensorFlow</span>
-                            <span>Python</span>
-                            <span>Swift</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://youtu.be/5qhzZ_sSixo3" target="_blank"><i class="fas fa-video"></i> <span data-translate-key="demoLink">عرض توضيحي</span></a>
-                            <a href="https://github.com/abdu1z1z/GhirasSwiftAI" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="DMovie.jpg" alt="Movie Recommendation System">
-                    <div class="project-card-content">
-                        <h3 data-translate-key="proj3Title">Movie Recommendation System (نظام توصية بالأفلام)</h3>
-                        <p data-translate-key="proj3Desc">
-                            بناء وتطبيق خوارزميات تعلم الآلة (مثل الترشيح التعاوني) وواجهة برمجة تطبيقات (API) باستخدام Flask لإنشاء نظام توصية شخصي للأفلام بناءً على تقييمات المستخدمين وأنماط المشاهدة، مما يعزز تجربة المستخدم.
-                        </p>
-                        <div class="project-tags">
-                            <span>Machine Learning</span>
-                            <span>Recommender Systems</span>
-                            <span>Collaborative Filtering</span>
-                            <span>Python</span>
-                            <span>API</span>
-                            <span>Flask</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://youtu.be/5qhzZ_sSixo4" target="_blank"><i class="fas fa-video"></i> <span data-translate-key="demoLink">عرض توضيحي</span></a>
-                            <a href="https://github.com/abdu1z1z/RecommendSystem" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="DLoan.jpg" alt="Loan Status Prediction">
-                    <div class="project-card-content">
-                        <h3 data-translate-key="proj4Title">Loan Status Prediction (التنبؤ بحالة القروض)</h3>
-                        <p data-translate-key="proj4Desc">
-                            تطبيق نماذج تصنيف متعددة (مثل Logistic Regression, SVM) لتقييم طلبات القروض والتنبؤ بالموافقة أو الرفض بناءً على بيانات العملاء التاريخية، بهدف تحسين دقة تقييم المخاطر.
-                        </p>
-                        <div class="project-tags">
-                            <span>Machine Learning</span>
-                            <span>Classification</span>
-                            <span>Data Preprocessing</span>
-                            <span>Python</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/abdu1z1z/LoanStatusBldModl" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="DFIRE.jpg" alt="Fire Data Analysis">
-                    <div class="project-card-content">
-                        <h3 data-translate-key="proj5Title">Fire Data Analysis (تحليل بيانات الحرائق)</h3>
-                        <p data-translate-key="proj5Desc">
-                            إجراء تحليل استكشافي لبيانات حرائق الغابات في البرتغال، وتطبيق نماذج الانحدار لتقييم تأثير مؤشرات الطقس (مثل FWI) على المساحة المحترقة، بهدف فهم عوامل الخطر.
-                        </p>
-                        <div class="project-tags">
-                            <span>Data Analysis</span>
-                            <span>Regression</span>
-                            <span>EDA</span>
-                            <span>Python</span>
-                            <span>Pandas</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/abdu1z1z/FireEDA" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">كود المصدر</span></a>
-                        </div>
-                    </div>
-                </div>
-               </div>
-        </div>
-    </section>
-
-    <section id="education" class="section section-alt-bg">
-        <div class="container">
-            <h2 class="section-title" data-translate-key="educationTitle">التعليم</h2>
-            <ul class="timeline-list">
-                 <li class="timeline-item">
-                    <strong data-translate-key="eduBachelors">بكالوريوس علوم البيانات (طالب حالي)</strong>
-                    <span data-translate-key="eduUniversity">الجامعة السعودية الإلكترونية - حالياً</span>
-                </li>
-                 <li class="timeline-item">
-                    <strong data-translate-key="eduDegree">دبلوم في برمجة الحاسب (معدل 4.57)</strong>
-                    <span data-translate-key="eduInstitute">معهد الإدارة العامة - أواخر 2023</span>
-                </li>
-                 </ul>
-        </div>
-    </section>
-
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title" data-translate-key="certsTitle">الشهادات والدورات</h2>
-            <ul class="timeline-list">
-                <li class="timeline-item">
-                    <strong data-translate-key="cert1Title">معسكر علوم البيانات T5 (لمدة ٣ شهور)</strong>
-                    <span data-translate-key="cert1Issuer">الهيئة السعودية للبيانات والذكاء الاصطناعي (SDAIA) وأكاديمية طويق</span>
-                    <a href="IMG_5479_page-0001-min.jpg" target="_blank" class="cert-link" data-translate-key="viewCert">عرض الشهادة</a>
-                </li>
-                <li class="timeline-item">
-                    <strong data-translate-key="cert2Title">معسكر الذكاء الاصطناعي (لمدة ٢ شهر)</strong>
-                     <span data-translate-key="cert2Issuer">الهيئة السعودية للبيانات والذكاء الاصطناعي (SDAIA) وأكاديمية طويق</span>
-                     </li>
-                 <li class="timeline-item">
-                    <strong data-translate-key="cert6Title">Oracle AI Vector Search Certified Professional</strong>
-                     <span data-translate-key="cert6Issuer">Oracle</span>
-                    <a href="Screenshot 2025-05-19 115145.png" target="_blank" class="cert-link" data-translate-key="viewCert">عرض الشهادة</a>
-                </li>
-                 <li class="timeline-item">
-                     <strong data-translate-key="cert3Title">Professional Certificate - Introduction to Artificial Intelligence</strong>
-                    <span data-translate-key="cert3Issuer">IBM (Coursera)</span>
-                    <a href="IMG_5675.jpg" target="_blank" class="cert-link" data-translate-key="viewCert">عرض الشهادة</a>
-                </li>
-                 <li class="timeline-item">
-                    <strong data-translate-key="cert4Title">Data Visualization with Power BI</strong>
-                    <span data-translate-key="cert4Issuer">Coursera</span>
-                     <a href="CourseraPowerBi_page-0001.jpg" target="_blank" class="cert-link" data-translate-key="viewCert">عرض الشهادة</a>
-                </li>
-                 <li class="timeline-item">
-                    <strong data-translate-key="cert5Title">Excel Skills for Business: Advanced</strong>
-                     <span data-translate-key="cert5Issuer">Coursera</span>
-                    <a href="CourseraEXCEL_page-0001.jpg" target="_blank" class="cert-link" data-translate-key="viewCert">عرض الشهادة</a>
-                </li>
-                 </ul>
-        </div>
-    </section>
-
-    <section id="contact" class="section section-alt-bg">
-        <div class="container">
-            <h2 class="section-title" data-translate-key="contactTitle">تواصل معي</h2>
-            <p data-translate-key="contactDesc">
-                مهتم بمناقشة المشاريع أو الفرص؟ لا تتردد في التواصل!
-            </p>
-            <div class="contact-links">
-                <a href="mailto:abdulaziz.althubaiti@gmail.com" target="_blank"><i class="fas fa-envelope"></i> <span data-translate-key="contactEmail">البريد الإلكتروني</span></a>
-                <a href="https://www.linkedin.com/in/abdulazizlinkai/" target="_blank"><i class="fab fa-linkedin"></i> <span data-translate-key="contactLinkedIn">لينكدإن</span></a>
-                <a href="https://github.com/abdu1z1z" target="_blank"><i class="fab fa-github"></i> <span data-translate-key="contactGitHub">GitHub</span></a>
+                 <div class="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-purple-900/20 pointer-events-none"></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
+        <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-800">
             <p data-translate-key="footerText">© 2025 - عبدالعزيز الثبيتي. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
+        </footer>
+
+    </main>
 
     <script>
+        // تفعيل الأيقونات
+        lucide.createIcons();
+
+        // --- منطق نافذة الصور (Modal) ---
+        function openModal(imageSrc, title) {
+            const modal = document.getElementById('certModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            
+            modalImg.onerror = function() {
+                this.src = 'https://placehold.co/800x600/1e293b/FFF?text=Image+Not+Found';
+            };
+            
+            modalImg.src = imageSrc;
+            modalTitle.innerText = title;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('certModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; 
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        // --- منطق الترجمة (Translation) ---
         const translations = {
             en: {
-                navAbout: "About Me",
-                navSkills: "Skills",
-                navSoftSkills: "Competencies",
-                navProjects: "Projects",
-                navEducation: "Education",
-                navCerts: "Certificates",
-                navContact: "Contact",
-                heroName: "Abdulaziz Al-Thubaiti",
-                heroTitle: "Data Scientist & AI Engineer | Programmer",
-                heroResumeBtn: "Download Resume",
+                langToggle: "ع",
+                navAbout: "About Me", navSkills: "Skills", navProjects: "Projects", navAch: "Hackathons",
+                navEducation: "Education", navCerts: "Certifications", navContact: "Contact",
+                heroBadge: "Welcome to my Portfolio", heroName: "Abdulaziz Al-Thubaiti",
+                heroTitle: "Data Scientist & AI Engineer | Programmer", heroResumeBtn: "Download Resume",
                 aboutTitle: "About Me",
-                aboutP1: "A computer programming graduate with a specialized passion for the complete data lifecycle: from engineering and building pipelines, through organization and analysis, to visualizing it as interactive, decision-supporting dashboards. I honed these skills in intensive data science bootcamps from SDAIA and Tuwaiq Academy, where I implemented multiple hands-on projects. My focus is on transforming raw data into valuable assets and delivering clear insights that drive organizational growth.",
+                aboutP1: "A computer programming graduate with a specialized passion for the complete data lifecycle: from engineering and building pipelines, through organization and analysis, to visualizing it as interactive, decision-supporting dashboards. I honed these skills in intensive data science bootcamps from SDAIA and Tuwaiq Academy. My focus is on transforming raw data into valuable assets.",
                 skillsTitle: "Technical Skills",
+                skillPython: "Python", skillML: "Machine Learning", skillDL: "Deep Learning",
+                skillLLM: "LLMs", skillHF: "Hugging Face", skillSQL: "SQL",
+                skillPowerBI: "Power BI", skillDA: "Data Analysis",
+                
+                // Soft Skills
                 softSkillsTitle: "Personal Competencies",
-                skillPython: "Python",
-                skillML: "Machine Learning",
-                skillDL: "Deep Learning",
-                skillCV: "Computer Vision",
-                skillSD: "Software Development (with AI)",
-                skillSQL: "SQL",
-                skillPowerBI: "Power BI",
-                skillDA: "Data Analysis",
                 softSkillPS: "Problem Solving",
-                softSkillPSDesc: "Analyzing complex challenges and applying appropriate methodologies to find effective and innovative solutions.",
+                softSkillPSDesc: "Analyzing complex challenges to find effective solutions.",
                 softSkillTeam: "Teamwork",
-                softSkillTeamDesc: "Collaborating effectively with team members to achieve common goals and share knowledge.",
+                softSkillTeamDesc: "Collaborating effectively with team members.",
                 softSkillComm: "Effective Communication",
-                softSkillCommDesc: "Clearly explaining complex technical concepts and presenting results understandably to diverse audiences.",
+                softSkillCommDesc: "Explaining technical concepts clearly.",
                 softSkillCrit: "Critical Thinking",
-                softSkillCritDesc: "Evaluating information objectively and analyzing assumptions to reach logical conclusions.",
+                softSkillCritDesc: "Evaluating information objectively to reach logical conclusions.",
                 softSkillLearn: "Continuous Learning",
-                softSkillLearnDesc: "Committed to skill development and keeping up-to-date with the latest technologies in AI and data analysis.",
+                softSkillLearnDesc: "Commitment to staying updated with the latest AI technologies.",
                 softSkillTime: "Time Management",
-                softSkillTimeDesc: "Organizing tasks and prioritizing effectively to deliver work efficiently and on schedule.",
-                projectsTitle: "Projects",
-                projChurnTitle: "Customer Churn Prediction",
-                projChurnDesc: "An end-to-end project that analyzes telecom customer data to build a machine learning model for predicting churn. It includes data cleaning, feature engineering, handling imbalance, and evaluating multiple models (XGBoost) to deliver strategic business recommendations.",
-                proj1Title: "BallVision (Football Performance Analysis System)",
-                proj1Desc: "A system that extracts essential tactical statistics and patterns (like pressure, space, isolation) from match videos, often difficult to quantify manually, aiming to improve decision-making for coaches and analysts.",
-                projPneumoniaTitle: "Pneumonia Detection from X-Rays", // ### NEW
-                projPneumoniaDesc: "A deep learning model utilizing transfer learning with a pre-trained VGG16 architecture to classify chest X-ray images with high accuracy. The base layers were frozen, and a custom classifier was trained for effective performance on medical data.", // ### NEW
-                projBallTrackTitle: "BallTrack (Ball Tracking System)",
-                projBallTrackDesc: "A specialized application focused on high-accuracy ball tracking in football matches using YOLO, extracting path and velocity data for individual player performance analysis.",
-                proj2Title: "AI Image Classifier (Plant Species)",
-                proj2Desc: "Developed and trained a deep learning model using TensorFlow/Keras to classify local plant images into over 30 categories, providing detailed information and locations, contributing to environmental documentation.",
-                proj3Title: "Movie Recommendation System",
-                proj3Desc: "Built and implemented machine learning algorithms (like collaborative filtering) and a Flask API to create a personalized movie recommendation system based on user ratings and viewing patterns, enhancing user experience.",
-                proj4Title: "Loan Status Prediction",
-                proj4Desc: "Applied multiple classification models (e.g., Logistic Regression, SVM) to evaluate loan applications and predict approval or rejection based on historical customer data, aiming to improve risk assessment accuracy.",
-                proj5Title: "Fire Data Analysis",
-                proj5Desc: "Conducted exploratory data analysis on forest fire data from Portugal and applied regression models to assess the impact of weather indices (like FWI) on the burned area, aiming to understand risk factors.",
-                projSalesTitle: "Sales Analysis Dashboard",
-                projSalesDesc: "An interactive dashboard built with Power BI to analyze sales data. It explores KPIs like top-selling products, sales by city, and temporal patterns to support decision-making.",
-                demoLink: "Demo",
-                sourceLink: "Source Code",
-                educationTitle: "Education",
-                eduBachelors: "Bachelor of Science in Data Science (Current Student)",
-                eduUniversity: "Saudi Electronic University - Present",
-                eduDegree: "Diploma in Computer Programming (GPA: 4.57)",
-                eduInstitute: "Institute of Public Administration - Late 2023",
-                certsTitle: "Certificates & Courses",
-                cert1Title: "Data Science Bootcamp T5 (3 Months)",
-                cert1Issuer: "SDAIA & Tuwaiq Academy",
-                cert2Title: "Artificial Intelligence Bootcamp (2 Months)",
-                cert2Issuer: "SDAIA & Tuwaiq Academy",
-                cert3Title: "Professional Certificate - Introduction to Artificial Intelligence",
-                cert3Issuer: "IBM (Coursera)",
-                cert4Title: "Data Visualization with Power BI",
-                cert4Issuer: "Coursera",
-                cert5Title: "Excel Skills for Business: Advanced",
-                cert5Issuer: "Coursera",
-                cert6Title:"Oracle AI Vector Search Certified Professional",
-                cert6Issuer : "Oracle", 
-                viewCert: "View Certificate",
-                contactTitle: "Contact Me",
-                contactDesc: "Interested in discussing projects or opportunities? Feel free to reach out!",
-                contactEmail: "Email",
-                contactLinkedIn: "LinkedIn",
-                contactGitHub: "GitHub",
-                footerText: "© 2025 - Abdulaziz Al-Thubaiti. All rights reserved.",
-                langToggle: "ع"
+                softSkillTimeDesc: "Organizing tasks to deliver work efficiently on schedule.",
 
+                // Projects
+                projectsTitle: "Featured Projects",
+                projInflowTitle: "Inflow (Fintech Winner)",
+                projInflowDesc: "2nd Place Winner. An embedded finance platform using AI Credit Scoring and React.",
+                projLLMTitle: "Arabic LLM Fine-tuning",
+                projLLMDesc: "Fine-tuning Qwen2.5-0.5B on CIDAR dataset locally for privacy using Hugging Face.",
+                projChurnTitle: "Customer Churn Prediction",
+                projChurnDesc: "An end-to-end project that analyzes telecom customer data to build a machine learning model for predicting churn.",
+                proj1Title: "BallVision",
+                proj1Desc: "A system that extracts essential tactical statistics and patterns from match videos using Computer Vision.",
+                projPneumoniaTitle: "Pneumonia Detection AI",
+                projPneumoniaDesc: "A deep learning model utilizing transfer learning with VGG16 to classify chest X-ray images.",
+                projSalesTitle: "Sales Analysis Dashboard",
+                projSalesDesc: "An interactive dashboard built with Power BI to analyze sales data and explore KPIs.",
+                proj3Title: "Movie Recommender",
+                proj3Desc: "Recommendation system using Collaborative Filtering and Flask API.",
+                proj4Title: "Loan Status Prediction",
+                proj4Desc: "Classification models to evaluate loan applications.",
+                demoLink: "Demo", sourceLink: "Code",
+
+                achievementsTitle: "Hackathons", achBadge2nd: "2nd Place",
+                ach1Title: "Inflow", ach1Desc: "An embedded finance platform for funding startups via SaaS platforms.",
+                achBadgeFinalist: "Finalist",
+                ach2Title: "BallVision", ach2Desc: "Advanced football analytics platform extracting invisible stats.",
+                
+                educationTitle: "Academic Education", eduBachelors: "BS in Data Science",
+                eduUniversity: "Saudi Electronic University - Present",
+                eduDegree: "Diploma in Computer Programming",
+                eduInstitute: "Institute of Public Administration - 2023",
+                
+                certsTitle: "Bootcamps & Certifications",
+                cert1Title: "Data Science Bootcamp T5", cert1Issuer: "SDAIA & Tuwaiq Academy",
+                cert2Title: "AI Bootcamp", cert2Issuer: "SDAIA & Tuwaiq Academy",
+                cert6Title: "Oracle AI Vector Search", cert6Issuer: "Oracle",
+                cert3Title: "Intro to AI", cert3Issuer: "IBM",
+                cert4Title: "Data Visualization", cert4Issuer: "Coursera",
+                cert5Title: "Excel Advanced", cert5Issuer: "Coursera",
+                viewCert: "View Certificate",
+                
+                contactTitle: "Get In Touch", contactDesc: "Interested in discussing projects? Feel free to reach out!",
+                contactEmail: "Email", contactLinkedIn: "LinkedIn", contactGitHub: "GitHub",
+                footerText: "© 2025 - Abdulaziz Al-Thubaiti. All rights reserved."
             },
             ar: {
-                navAbout: "نبذة عني",
-                navSkills: "المهارات",
-                navSoftSkills: "الكفاءات",
-                navProjects: "المشاريع",
-                navEducation: "التعليم",
-                navCerts: "الشهادات",
-                navContact: "تواصل معي",
-                heroName: "عبدالعزيز الثبيتي",
-                heroTitle: "عالم بيانات ومهندس ذكاء اصطناعي | مبرمج",
-                heroResumeBtn: "تحميل السيرة الذاتية",
+                langToggle: "EN",
+                navAbout: "نبذة عني", navSkills: "المهارات", navProjects: "المشاريع", navAch: "الهاكاثونات",
+                navEducation: "التعليم", navCerts: "الشهادات", navContact: "تواصل معي",
+                heroBadge: "مرحبًا بك في ملف أعمالي", heroName: "عبدالعزيز الثبيتي",
+                heroTitle: "عالم بيانات ومهندس ذكاء اصطناعي | مبرمج", heroResumeBtn: "تحميل السيرة الذاتية",
                 aboutTitle: "نبذة عني",
-                aboutP1: "خريج برمجة حاسوب، شغوفٌ بتخصص دورة حياة البيانات الكاملة، بدءًا من هندسة وبناء خطوط الأنابيب، مرورًا بالتنظيم والتحليل، وصولًا إلى تصورها كلوحات معلومات تفاعلية تدعم القرارات. صقلتُ هذه المهارات في معسكرات تدريبية مكثفة في علوم البيانات من SDAIA وأكاديمية طويق، حيث نفّذتُ العديد من المشاريع العملية. ينصبُّ تركيزي على تحويل البيانات الخام إلى أصول قيّمة، وتقديم رؤى واضحة تُحفّز نموّ المؤسسة.",
+                aboutP1: "خريج برمجة حاسوب، شغوفٌ بتخصص دورة حياة البيانات الكاملة، بدءًا من هندسة وبناء خطوط الأنابيب، مرورًا بالتنظيم والتحليل، وصولًا إلى تصورها كلوحات معلومات تفاعلية تدعم القرارات. صقلتُ هذه المهارات في معسكرات تدريبية مكثفة في علوم البيانات من SDAIA وأكاديمية طويق. ينصبُّ تركيزي على تحويل البيانات الخام إلى أصول قيّمة.",
                 skillsTitle: "المهارات التقنية",
+                skillPython: "Python", skillML: "تعلم الآلة", skillDL: "التعلم العميق",
+                skillLLM: "LLMs", skillHF: "Hugging Face", skillSQL: "SQL",
+                skillPowerBI: "Power BI", skillDA: "تحليل البيانات",
+
+                // Soft Skills
                 softSkillsTitle: "الكفاءات الشخصية",
-                skillPython: "Python",
-                skillML: "تعلم الآلة",
-                skillDL: "التعلم العميق",
-                skillCV: "رؤية الحاسب",
-                skillSD: "تطوير البرمجيات (مع AI)",
-                skillSQL: "SQL",
-                skillPowerBI: "Power BI",
-                skillDA: "تحليل البيانات",
                 softSkillPS: "حل المشكلات",
-                softSkillPSDesc: "تحليل التحديات المعقدة وتطبيق المنهجيات المناسبة لإيجاد حلول فعالة ومبتكرة.",
+                softSkillPSDesc: "تحليل التحديات المعقدة وايجاد حلول مبتكرة.",
                 softSkillTeam: "العمل الجماعي",
-                softSkillTeamDesc: "التعاون بفعالية مع أعضاء الفريق لتحقيق الأهداف المشتركة وتبادل المعرفة.",
+                softSkillTeamDesc: "التعاون بفعالية لتحقيق الأهداف المشتركة.",
                 softSkillComm: "التواصل الفعال",
-                softSkillCommDesc: "شرح الأفكار التقنية المعقدة بوضوح وتقديم النتائج بشكل مفهوم لمختلف الجماهير.",
+                softSkillCommDesc: "شرح الأفكار التقنية بوضوح.",
                 softSkillCrit: "التفكير النقدي",
                 softSkillCritDesc: "تقييم المعلومات بموضوعية وتحليل الافتراضات للوصول إلى استنتاجات منطقية.",
                 softSkillLearn: "التعلم المستمر",
-                softSkillLearnDesc: "الالتزام بتطوير المهارات ومواكبة أحدث التقنيات في مجال الذكاء الاصطناعي وتحليل البيانات.",
+                softSkillLearnDesc: "الالتزام بتطوير المهارات ومواكبة أحدث التقنيات في مجال الذكاء الاصطناعي.",
                 softSkillTime: "إدارة الوقت",
                 softSkillTimeDesc: "تنظيم المهام وتحديد الأولويات لإنجاز العمل بكفاءة وضمن الجداول الزمنية.",
-                projectsTitle: "المشاريع",
-                projChurnTitle: "التنبؤ بمغادرة العملاء (Customer Churn)",
-                projChurnDesc: "مشروع متكامل يحلل بيانات عملاء شركة اتصالات لبناء نموذج تعلم آلة يتنبأ بالعملاء المعرضين لخطر المغادرة. يتضمن تنظيف البيانات، هندسة الميزات، معالجة عدم التوازن، وتقييم نماذج متعددة (XGBoost) للوصول إلى توصيات عمل استراتيجية.",
-                proj1Title: "BallVision (نظام تحليل أداء كرة القدم)",
-                proj1Desc: "نظام يستخرج إحصائيات وأنماط تكتيكية جوهرية يصعب قياسها يدوياً من فيديوهات المباريات (مثل الضغط، المساحات، العزلة)، بهدف تحسين عملية اتخاذ القرار للمدربين والمحللين.",
-                projPneumoniaTitle: "الكشف عن الالتهاب الرئوي بصور الأشعة", // ### NEW
-                projPneumoniaDesc: "نموذج تعلم عميق يستخدم تقنية التعلم بالنقل (Transfer Learning) مع بنية VGG16 المدربة مسبقًا لتصنيف صور الأشعة السينية للصدر بدقة عالية. تم تجميد طبقات القاعدة وتدريب مصنف مخصص لتحقيق أداء فعال على البيانات الطبية.", // ### NEW
-                projBallTrackTitle: "BallTrack (نظام تتبع الكرة)",
-                projBallTrackDesc: "تطبيق متخصص في تتبع حركة الكرة بدقة عالية في مباريات كرة القدم باستخدام YOLO، مع التركيز على استخراج بيانات المسار والسرعة لتحليل أداء اللاعبين الفردي.",
-                proj2Title: "AI Image Classifier (مصنف صور النباتات)",
-                proj2Desc: "تطوير وتدريب نموذج تعلم عميق باستخدام TensorFlow/Keras لتصنيف صور النباتات المحلية بدقة تزيد عن 30 فئة. يقدم التطبيق معلومات تفصيلية ومواقع التواجد، مساهماً في التوثيق البيئي.",
-                proj3Title: "Movie Recommendation System (نظام توصية بالأفلام)",
-                proj3Desc: "بناء وتطبيق خوارزميات تعلم الآلة (مثل الترشيح التعاوني) وواجهة برمجة تطبيقات (API) باستخدام Flask لإنشاء نظام توصية شخصي للأفلام بناءً على تقييمات المستخدمين وأنماط المشاهدة، مما يعزز تجربة المستخدم.",
-                proj4Title: "Loan Status Prediction (التنبؤ بحالة القروض)",
-                proj4Desc: "تطبيق نماذج تصنيف متعددة (مثل Logistic Regression, SVM) لتقييم طلبات القروض والتنبؤ بالموافقة أو الرفض بناءً على بيانات العملاء التاريخية، بهدف تحسين دقة تقييم المخاطر.",
-                proj5Title: "Fire Data Analysis (تحليل بيانات الحرائق)",
-                proj5Desc: "إجراء تحليل استكشافي لبيانات حرائق الغابات في البرتغال، وتطبيق نماذج الانحدار لتقييم تأثير مؤشرات الطقس (مثل FWI) على المساحة المحترقة، بهدف فهم عوامل الخطر.",
-                projSalesTitle: "لوحة معلومات تحليل المبيعات",
-                projSalesDesc: "لوحة معلومات تفاعلية تم إنشاؤها باستخدام Power BI لتحليل بيانات المبيعات. تستكشف المؤشرات الرئيسية مثل أفضل المنتجات مبيعاً، والمبيعات حسب المدينة، والأنماط الزمنية للمبيعات لدعم اتخاذ القرار.",
-                demoLink: "عرض توضيحي",
-                sourceLink: "كود المصدر",
-                educationTitle: "التعليم",
-                eduBachelors: "بكالوريوس علوم البيانات (طالب حالي)",
+
+                // Projects
+                projectsTitle: "المشاريع المتميزة",
+                projInflowTitle: "Inflow (فائز بمركز 2)",
+                projInflowDesc: "مشروع فائز بالمركز الثاني. منصة تمويل مدمج (Embedded Finance) تستخدم الذكاء الاصطناعي لتقييم الائتمان.",
+                projLLMTitle: "Arabic LLM Fine-tuning",
+                projLLMDesc: "تحسين نموذج Qwen2.5-0.5B على بيانات CIDAR محلياً لضمان الخصوصية والاستقلالية عن السحابة.",
+                projChurnTitle: "التنبؤ بمغادرة العملاء",
+                projChurnDesc: "مشروع متكامل يحلل بيانات عملاء شركة اتصالات لبناء نموذج تعلم آلة يتنبأ بالعملاء المعرضين لخطر المغادرة.",
+                proj1Title: "BallVision",
+                proj1Desc: "نظام يستخرج إحصائيات وأنماط تكتيكية جوهرية من فيديوهات المباريات باستخدام الرؤية الحاسوبية.",
+                projPneumoniaTitle: "الكشف عن الالتهاب الرئوي",
+                projPneumoniaDesc: "نموذج تعلم عميق يستخدم تقنية Transfer Learning مع VGG16 لتصنيف صور الأشعة.",
+                projSalesTitle: "لوحة مبيعات Power BI",
+                projSalesDesc: "لوحة معلومات تفاعلية تم إنشاؤها باستخدام Power BI لتحليل بيانات المبيعات.",
+                proj3Title: "نظام توصية الأفلام",
+                proj3Desc: "نظام توصية شخصي للأفلام باستخدام Collaborative Filtering و Flask.",
+                proj4Title: "تنبؤ حالة القروض",
+                proj4Desc: "تطبيق نماذج تصنيف متعددة لتقييم طلبات القروض.",
+                demoLink: "فيديو", sourceLink: "الكود",
+
+                achievementsTitle: "إنجازات الهاكاثونات", achBadge2nd: "المركز الثاني",
+                ach1Title: "Inflow", ach1Desc: "منصة متكاملة تركز على مفهوم Embedded Finance، تتيح تمويل الشركات الناشئة مباشرة.",
+                achBadgeFinalist: "متأهل للنهائيات",
+                ach2Title: "BallVision", ach2Desc: "منصة تحليلية متقدمة في كرة القدم لاستخراج البيانات غير المرئية.",
+                
+                educationTitle: "التعليم الأكاديمي", eduBachelors: "بكالوريوس علوم البيانات",
                 eduUniversity: "الجامعة السعودية الإلكترونية - حالياً",
-                eduDegree: "دبلوم في برمجة الحاسب (معدل 4.57)",
-                eduInstitute: "معهد الإدارة العامة - أواخر 2023",
-                certsTitle: "الشهادات والدورات",
-                cert1Title: "معسكر علوم البيانات T5 (لمدة ٣ شهور)",
-                cert1Issuer: "الهيئة السعودية للبيانات والذكاء الاصطناعي (SDAIA) وأكاديمية طويق",
-                cert2Title: "معسكر الذكاء الاصطناعي (لمدة ٢ شهر)",
-                cert2Issuer: "الهيئة السعودية للبيانات والذكاء الاصطناعي (SDAIA) وأكاديمية طويق",
-                cert3Title: "Professional Certificate - Introduction to Artificial Intelligence",
-                cert3Issuer: "IBM (Coursera)",
-                cert4Title: "Data Visualization with Power BI",
-                cert4Issuer: "Coursera",
-                cert5Title: "Excel Skills for Business: Advanced",
-                cert5Issuer: "Coursera",
-                cert6Title:"Oracle AI Vector Search Certified Professional",
-                cert6Issuer : "Oracle",
+                eduDegree: "دبلوم برمجة حاسب",
+                eduInstitute: "معهد الإدارة العامة - 2023",
+                
+                certsTitle: "المعسكرات والشهادات",
+                cert1Title: "معسكر علوم البيانات T5", cert1Issuer: "SDAIA وأكاديمية طويق",
+                cert2Title: "معسكر الذكاء الاصطناعي", cert2Issuer: "SDAIA وأكاديمية طويق",
+                cert6Title: "Oracle AI Vector Search", cert6Issuer: "Oracle",
+                cert3Title: "مقدمة في الذكاء الاصطناعي", cert3Issuer: "IBM",
+                cert4Title: "تصور البيانات", cert4Issuer: "Coursera",
+                cert5Title: "إكسل متقدم", cert5Issuer: "Coursera",
                 viewCert: "عرض الشهادة",
-                contactTitle: "تواصل معي",
-                contactDesc: "مهتم بمناقشة المشاريع أو الفرص؟ لا تتردد في التواصل!",
-                contactEmail: "البريد الإلكتروني",
-                contactLinkedIn: "لينكدإن",
-                contactGitHub: "GitHub",
-                footerText: " 2025 - عبدالعزيز الثبيتي. .",
-                langToggle: "EN"
+                
+                contactTitle: "تواصل معي", contactDesc: "مهتم بمناقشة المشاريع أو الفرص؟ لا تتردد في التواصل!",
+                contactEmail: "البريد الإلكتروني", contactLinkedIn: "لينكدإن", contactGitHub: "GitHub",
+                footerText: "© 2025 - عبدالعزيز الثبيتي. جميع الحقوق محفوظة."
             }
         };
 
-        let currentLanguage = 'ar'; // Default language
+        let currentLanguage = 'ar';
 
         function setLanguage(lang) {
             const elements = document.querySelectorAll('[data-translate-key]');
             const htmlEl = document.documentElement;
-
-            if (!translations[lang]) {
-                console.error("Language not supported:", lang);
-                return;
-            }
-            
-            const nextLang = lang === 'ar' ? 'en' : 'ar';
-
             elements.forEach(el => {
                 const key = el.getAttribute('data-translate-key');
                 if (translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
+                    el.innerText = translations[lang][key];
                 }
             });
-
             htmlEl.setAttribute('lang', lang);
             htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-            
-            const toggleBtn = document.getElementById('lang-toggle-btn');
-            if(toggleBtn){
-                toggleBtn.textContent = translations[nextLang]['langToggle'];
-            }
-            
+            document.getElementById('lang-toggle-btn').innerText = lang === 'ar' ? 'EN' : 'ع';
             currentLanguage = lang;
         }
 
-
-        // --- Event Listeners ---
-        document.addEventListener('DOMContentLoaded', function() {
-            const langToggleButton = document.getElementById('lang-toggle-btn');
-
-            if (langToggleButton) {
-                langToggleButton.addEventListener('click', () => {
-                    const nextLang = currentLanguage === 'ar' ? 'en' : 'ar';
-                    setLanguage(nextLang);
-                });
-            }
-
-            setLanguage('ar'); // Initialize default language
-
-            document.querySelectorAll('header nav a').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    // Temporarily remove smooth scroll for navigation
-                    // to ensure active state updates correctly on click
-                });
-            });
-            
-             // More robust scroll handling
-            window.addEventListener('scroll', () => {
-                let current = '';
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const scrollOffset = window.pageYOffset + headerHeight + 50;
-
-                document.querySelectorAll('section[id]').forEach(section => {
-                    if (scrollOffset >= section.offsetTop) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                document.querySelectorAll('header nav a').forEach( a => {
-                    a.classList.remove('active');
-                    if(a.getAttribute('href') === '#' + current){
-                        a.classList.add('active');
-                    }
-                });
-            }, { passive: true });
-
+        document.getElementById('lang-toggle-btn').addEventListener('click', () => {
+            const nextLang = currentLanguage === 'ar' ? 'en' : 'ar';
+            setLanguage(nextLang);
         });
     </script>
-
 </body>
 </html>
