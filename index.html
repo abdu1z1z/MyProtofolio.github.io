@@ -8,14 +8,19 @@
     <meta name="author" content="Abdulaziz Al-Thubaiti">
     <title>ملف أعمال عبدالعزيز الثبيتي | AI & Data Science Portfolio</title>
     
+    <!-- مكتبة Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- خط Cairo -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- مكتبة Lucide للأيقونات -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
+    <!-- مكتبة FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- إعدادات Tailwind -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -104,12 +109,14 @@
 </head>
 <body class="antialiased overflow-x-hidden selection:bg-blue-500/30">
 
+    <!-- خلفية جمالية ثابتة -->
     <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]"></div>
         <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-emerald-600/10 rounded-full blur-[120px]"></div>
         <div class="absolute top-[40%] left-[50%] transform -translate-x-1/2 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px]"></div>
     </div>
 
+    <!-- نافذة عرض الشهادات (Modal) -->
     <div id="certModal" class="modal fixed inset-0 flex items-center justify-center bg-black/90 backdrop-blur-md p-4" onclick="closeModal()">
         <div class="modal-content relative max-w-5xl w-full bg-slate-900 rounded-2xl border border-slate-700 overflow-hidden shadow-2xl flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
             <div class="flex justify-between items-center p-4 border-b border-slate-700 bg-slate-800/50 shrink-0">
@@ -124,6 +131,7 @@
         </div>
     </div>
 
+    <!-- القائمة العلوية (Navbar) -->
     <header class="glass-nav fixed w-full top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="text-2xl font-bold tracking-tight cursor-default">
@@ -149,6 +157,7 @@
 
     <main class="relative z-10 container mx-auto px-4 md:px-6 pt-32 pb-12">
 
+        <!-- Hero Section -->
         <section id="hero" class="min-h-[85vh] flex flex-col justify-center items-center text-center animate-fade-in">
             <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-slate-800/50 border border-slate-700/50 text-blue-300 text-sm font-medium backdrop-blur-md">
                 <span class="relative flex h-2 w-2">
@@ -174,6 +183,7 @@
             </div>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="py-20">
             <div class="max-w-5xl mx-auto glass-card rounded-[2.5rem] p-8 md:p-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center relative inline-block w-full">
@@ -187,17 +197,19 @@
                     </div>
                     <div class="w-full md:w-2/3 text-center md:text-start rtl:md:text-right">
                         <p class="text-lg md:text-xl leading-loose text-slate-300 font-light" data-translate-key="aboutP1">
-                           خريج برمجة حاسوب وشغوف بعلم البيانات والذكاء الاصطناعي، مع تركيز خاص على نماذج اللغة الكبيرة (LLMs) وتطبيقاتها العملية. أعمل على بناء حلول ذكية تبدأ من فهم المشكلة وتحليل البيانات، مرورًا بتطوير النماذج وتقييمها، وصولًا إلى تقديم نتائج واضحة ولوحات معلومات تدعم اتخاذ القرار. هدفي تحويل البيانات والأفكار إلى منتجات AI قابلة للاستخدام وتحقق أثرًا ملموسًا.
+                            خريج برمجة حاسوب، شغوفٌ بتخصص دورة حياة البيانات الكاملة؛ من هندسة وبناء خطوط الأنابيب، مرورًا بالتنظيم والتحليل، وصولًا إلى تصورها كلوحات معلومات تفاعلية تدعم القرارات. صقلتُ هذه المهارات في معسكرات تدريبية مكثفة في علوم البيانات من SDAIA وأكاديمية طويق. ينصبُّ تركيزي على تحويل البيانات الخام إلى أصول قيّمة.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills" class="py-20">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl font-bold text-white mb-4" data-translate-key="skillsTitle">المهارات التقنية</h2>
             </div>
+            
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
                 <div class="glass-card p-6 rounded-2xl flex flex-col items-center group">
                     <i class="fab fa-python text-4xl text-yellow-400 mb-4 group-hover:scale-110 transition-transform"></i>
@@ -233,6 +245,7 @@
                 </div>
             </div>
 
+            <!-- Soft Skills -->
             <div id="soft-skills">
                 <h3 class="text-2xl md:text-3xl font-bold text-center text-white mb-10" data-translate-key="softSkillsTitle">الكفاءات الشخصية</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -282,32 +295,35 @@
             </div>
         </section>
 
+        <!-- Projects Section (Complete List) -->
         <section id="projects" class="py-20">
             <h2 class="text-3xl md:text-5xl font-bold text-center text-white mb-16 gradient-text" data-translate-key="projectsTitle">المشاريع المتميزة</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
+                <!-- NEW PROJECT 1: Inflow -->
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col group border border-blue-500/30">
                     <div class="relative h-52 overflow-hidden bg-slate-900 flex items-center justify-center">
                         <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/40 to-slate-900 z-0"></div>
                         <i class="fas fa-hand-holding-dollar text-6xl text-blue-400 z-10 opacity-80 group-hover:scale-110 transition-transform duration-700"></i>
-                         </div>
+                    </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-white mb-2" data-translate-key="projInflowTitle">Inflow (Fintech)</h3>
                         <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="projInflowDesc">مشروع فائز بالمركز الثاني. منصة تمويل مدمج (Embedded Finance) تستخدم الذكاء الاصطناعي لتقييم الائتمان.</p>
                         <div class="flex gap-2 mb-4 flex-wrap">
                             <span class="px-2 py-1 bg-blue-500/10 text-blue-300 text-xs rounded border border-blue-500/20">React</span>
                             <span class="px-2 py-1 bg-blue-500/10 text-blue-300 text-xs rounded border border-blue-500/20">API</span>
-                            <span class="px-2 py-1 bg-blue-500/10 text-blue-300 text-xs rounded border border-blue-500/20">AI Credit Score</span>
+                            <span class="px-2 py-1 bg-blue-500/10 text-blue-300 text-xs rounded border border-blue-500/20">AI Score</span>
                         </div>
                         <div class="mt-auto pt-4 border-t border-slate-700/50">
-                            <a href="#" class="text-slate-500 cursor-not-allowed font-bold text-sm flex items-center gap-2 group/link">
-                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود (قريباً)</span>
+                            <a href="#" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-2 group/link">
+                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- NEW PROJECT 2: Arabic LLM Fine-tuning -->
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col group border border-emerald-500/30">
                     <div class="relative h-52 overflow-hidden bg-slate-900 flex items-center justify-center">
                          <div class="absolute inset-0 bg-gradient-to-tr from-emerald-900/40 to-slate-900 z-0"></div>
@@ -317,18 +333,21 @@
                         <h3 class="text-xl font-bold text-white mb-2" data-translate-key="projLLMTitle">Arabic LLM Fine-tuning</h3>
                         <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="projLLMDesc">تحسين نموذج Qwen2.5-0.5B على بيانات CIDAR محلياً لضمان الخصوصية والاستقلالية عن السحابة.</p>
                         <div class="flex gap-2 mb-4 flex-wrap">
-                            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded border border-emerald-500/20">Hugging Face</span>
                             <span class="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded border border-emerald-500/20">Transformers</span>
                             <span class="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded border border-emerald-500/20">Local LLM</span>
                         </div>
-                        <div class="mt-auto pt-4 border-t border-slate-700/50">
-                            <a href="#" class="text-slate-500 cursor-not-allowed font-bold text-sm flex items-center gap-2 group/link">
-                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود (قريباً)</span>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50 flex gap-4">
+                            <a href="#" class="text-white hover:text-red-400 font-bold text-sm flex items-center gap-1 group/link">
+                                <i data-lucide="youtube" class="w-4 h-4"></i> <span data-translate-key="demoLink">فيديو</span>
+                            </a>
+                            <a href="#" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-1 group/link">
+                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Project 3: Churn -->
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
                     <div class="relative h-52 overflow-hidden bg-slate-900">
                         <img src="generated-image-1753680420715.png" alt="Churn" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Churn+Prediction'">
@@ -341,13 +360,12 @@
                             <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">Analysis</span>
                         </div>
                         <div class="mt-auto pt-4 border-t border-slate-700/50">
-                            <a href="https://github.com/abdu1z1z/Churn_Prediction/tree/main" target="_blank" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-2 group/link">
-                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span>
-                            </a>
+                            <a href="https://github.com/abdu1z1z/Churn_Prediction/tree/main" target="_blank" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-2 group/link"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span></a>
                         </div>
                     </div>
                 </div>
 
+                 <!-- Project 4: Sales -->
                  <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
                     <div class="relative h-52 overflow-hidden bg-slate-900">
                         <img src="IMG_DashBoard.png" alt="Sales" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Sales+Dash'">
@@ -360,13 +378,12 @@
                             <span class="px-2 py-1 bg-yellow-500/10 text-yellow-300 text-xs rounded border border-yellow-500/20">DAX</span>
                         </div>
                         <div class="mt-auto pt-4 border-t border-slate-700/50">
-                            <a href="https://youtu.be/XmLDUNFrapY" target="_blank" class="text-white hover:text-red-400 font-bold text-sm flex items-center gap-2 group/link">
-                                <i data-lucide="youtube" class="w-4 h-4"></i> <span data-translate-key="demoLink">فيديو</span>
-                            </a>
+                            <a href="https://youtu.be/XmLDUNFrapY" target="_blank" class="text-white hover:text-red-400 font-bold text-sm flex items-center gap-2 group/link"><i data-lucide="youtube" class="w-4 h-4"></i> <span data-translate-key="demoLink">فيديو</span></a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Project 5: BallVision -->
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
                     <div class="relative h-52 overflow-hidden bg-slate-900">
                         <img src="Flux_Dev_Create_a_professional_and_dynamic_cover_image_for_a_f_1.jpg" alt="BallVision" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=BallVision'">
@@ -385,6 +402,7 @@
                     </div>
                 </div>
 
+                 <!-- Project 6: Pneumonia -->
                  <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
                     <div class="relative h-52 overflow-hidden bg-slate-900">
                         <img src="Gemini_Generated_Image_z25yhjz25yhjz25y.png" alt="Pneumonia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Medical+AI'">
@@ -397,13 +415,50 @@
                             <span class="px-2 py-1 bg-purple-500/10 text-purple-300 text-xs rounded border border-purple-500/20">VGG16</span>
                         </div>
                         <div class="mt-auto pt-4 border-t border-slate-700/50">
-                            <a href="https://github.com/abdu1z1z/CNN-Lung-Analysis" target="_blank" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-2">
-                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span>
-                            </a>
+                            <a href="https://github.com/abdu1z1z/CNN-Lung-Analysis" target="_blank" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-2"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span></a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Project 7: BallTrack -->
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="relative h-52 overflow-hidden bg-slate-900">
+                        <img src="DBALLjpg.jpg" alt="BallTrack" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=BallTrack'">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2" data-translate-key="projBallTrackTitle">BallTrack (تتبع الكرة)</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="projBallTrackDesc">تطبيق لتتبع حركة الكرة بدقة عالية في المباريات.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-2 py-1 bg-green-500/10 text-green-300 text-xs rounded border border-green-500/20">Tracking</span>
+                            <span class="px-2 py-1 bg-green-500/10 text-green-300 text-xs rounded border border-green-500/20">YOLO</span>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50 flex gap-4">
+                            <a href="https://youtu.be/5qhzZ_sSixo2" target="_blank" class="text-white hover:text-red-400 text-sm flex items-center gap-1"><i data-lucide="video" class="w-4 h-4"></i> فيديو</a>
+                            <a href="https://github.com/abdu1z1z/TrackBall" target="_blank" class="text-white hover:text-blue-400 text-sm flex items-center gap-1"><i class="fab fa-github"></i> كود</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Plant AI -->
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="relative h-52 overflow-hidden bg-slate-900">
+                        <img src="DGhirasr.jpg" alt="Plant AI" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Plant+AI'">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2" data-translate-key="proj2Title">AI Image Classifier</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="proj2Desc">نموذج لتصنيف صور النباتات المحلية لأكثر من 30 فئة.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-2 py-1 bg-orange-500/10 text-orange-300 text-xs rounded border border-orange-500/20">TensorFlow</span>
+                            <span class="px-2 py-1 bg-orange-500/10 text-orange-300 text-xs rounded border border-orange-500/20">Swift</span>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50 flex gap-4">
+                            <a href="https://youtu.be/5qhzZ_sSixo3" target="_blank" class="text-white hover:text-red-400 text-sm flex items-center gap-1"><i data-lucide="video" class="w-4 h-4"></i> فيديو</a>
+                            <a href="https://github.com/abdu1z1z/GhirasSwiftAI" target="_blank" class="text-white hover:text-blue-400 text-sm flex items-center gap-1"><i class="fab fa-github"></i> كود</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9: Movie Rec -->
                 <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
                     <div class="relative h-52 overflow-hidden bg-slate-900">
                         <img src="DMovie.jpg" alt="Movie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Rec+System'">
@@ -422,6 +477,7 @@
                     </div>
                 </div>
                 
+                 <!-- Project 10: Loan -->
                  <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
                     <div class="relative h-52 overflow-hidden bg-slate-900">
                         <img src="DLoan.jpg" alt="Loan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Loan+AI'">
@@ -433,9 +489,25 @@
                             <span class="px-2 py-1 bg-blue-500/10 text-blue-300 text-xs rounded border border-blue-500/20">SVM</span>
                         </div>
                         <div class="mt-auto pt-4 border-t border-slate-700/50">
-                            <a href="https://github.com/abdu1z1z/LoanStatusBldModl" target="_blank" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-2">
-                                <i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span>
-                            </a>
+                            <a href="https://github.com/abdu1z1z/LoanStatusBldModl" target="_blank" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-2"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 11: Fire Data -->
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="relative h-52 overflow-hidden bg-slate-900">
+                        <img src="DFIRE.jpg" alt="Fire Analysis" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://placehold.co/600x400/1e293b/FFF?text=Fire+EDA'">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2" data-translate-key="proj5Title">Fire Data Analysis</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3 flex-grow font-light" data-translate-key="proj5Desc">تحليل استكشافي لبيانات حرائق الغابات وتطبيق نماذج الانحدار.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="px-2 py-1 bg-red-500/10 text-red-300 text-xs rounded border border-red-500/20">Pandas</span>
+                            <span class="px-2 py-1 bg-red-500/10 text-red-300 text-xs rounded border border-red-500/20">Regression</span>
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-slate-700/50">
+                            <a href="https://github.com/abdu1z1z/FireEDA" target="_blank" class="text-white hover:text-blue-400 font-bold text-sm flex items-center gap-2"><i class="fab fa-github"></i> <span data-translate-key="sourceLink">الكود</span></a>
                         </div>
                     </div>
                 </div>
@@ -443,6 +515,7 @@
             </div>
         </section>
 
+        <!-- Hackathons Section -->
         <section id="achievements" class="py-20 animate-fade-in border-t border-slate-800/50">
              <header class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight" data-translate-key="achievementsTitle">
@@ -454,6 +527,7 @@
             </header>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Card 1: Inflow -->
                 <article class="glass-card rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group">
                     <div class="absolute top-0 left-0 bg-gradient-to-r from-slate-100 via-gray-300 to-slate-400 text-slate-900 text-[10px] md:text-xs font-black px-6 py-2.5 rounded-br-2xl shadow-xl flex items-center gap-2 tracking-widest uppercase z-20">
                         <i data-lucide="trophy" class="w-4 h-4"></i>
@@ -482,6 +556,7 @@
                     <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-blue-500/10 transition-all duration-700"></div>
                 </article>
 
+                <!-- Card 2: BallVision -->
                 <article class="glass-card rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group">
                      <div class="absolute top-0 left-0 bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600 text-white text-[10px] md:text-xs font-black px-6 py-2.5 rounded-br-2xl shadow-xl flex items-center gap-2 tracking-widest uppercase z-20">
                         <i data-lucide="medal" class="w-4 h-4"></i>
@@ -512,6 +587,7 @@
             </div>
         </section>
 
+        <!-- Education Section -->
         <section id="education" class="py-20 border-t border-slate-800/50">
             <div class="text-center mb-16">
                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-400 text-xs font-bold mb-4">
@@ -520,6 +596,7 @@
                  <h2 class="text-3xl md:text-5xl font-bold text-white" data-translate-key="educationTitle">التعليم الأكاديمي</h2>
              </div>
              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                 <!-- Bachelor's -->
                  <div class="glass-card p-8 rounded-3xl border-r-4 border-r-blue-600 relative overflow-hidden group hover:border-blue-500/50 transition-all">
                      <div class="flex items-start gap-6">
                         <div class="w-14 h-14 rounded-2xl bg-blue-600/20 flex items-center justify-center text-blue-400 shrink-0">
@@ -532,6 +609,7 @@
                         </div>
                      </div>
                  </div>
+                 <!-- Diploma -->
                  <div class="glass-card p-8 rounded-3xl border-r-4 border-r-amber-500 relative overflow-hidden group hover:border-amber-500/50 transition-all">
                     <div class="flex items-start gap-6">
                         <div class="w-14 h-14 rounded-2xl bg-amber-600/20 flex items-center justify-center text-amber-400 shrink-0">
@@ -547,6 +625,7 @@
              </div>
         </section>
 
+        <!-- Certifications Section -->
         <section id="certifications" class="py-20">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-400 text-xs font-bold mb-4">
@@ -555,6 +634,7 @@
                 <h2 class="text-3xl md:text-5xl font-bold text-white" data-translate-key="certsTitle">الشهادات والمعسكرات</h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- T5 Bootcamp -->
                 <div class="glass-card p-6 rounded-2xl border-t-4 border-t-pink-500 hover:shadow-pink-500/10 cursor-pointer group transition-all" onclick="openModal('IMG_5479_page-0001-min.jpg', 'T5 Data Science Bootcamp')">
                     <div class="flex justify-between items-start mb-4">
                         <div class="w-12 h-12 rounded-lg bg-pink-500/20 flex items-center justify-center text-pink-400">
@@ -568,6 +648,7 @@
                         <i data-lucide="eye" class="w-3 h-3"></i> عرض الشهادة
                     </div>
                 </div>
+                <!-- AI Bootcamp -->
                 <div class="glass-card p-6 rounded-2xl border-t-4 border-t-purple-600 hover:shadow-purple-500/10 cursor-pointer group transition-all" onclick="openModal('https://placehold.co/800x600/1e293b/FFF?text=AI+Bootcamp+Cert', 'AI Bootcamp')">
                     <div class="flex justify-between items-start mb-4">
                         <div class="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center text-purple-400">
@@ -581,6 +662,7 @@
                         <i data-lucide="eye" class="w-3 h-3"></i> عرض الشهادة
                     </div>
                 </div>
+                <!-- Oracle -->
                 <div class="glass-card p-6 rounded-2xl border-t-4 border-t-red-600 hover:shadow-red-500/10 cursor-pointer group transition-all" onclick="openModal('Screenshot 2025-05-19 115145.png', 'Oracle AI Vector Search')">
                     <div class="flex justify-between items-start mb-4">
                         <div class="w-12 h-12 rounded-lg bg-red-600/20 flex items-center justify-center text-red-400">
@@ -594,18 +676,21 @@
                         <i data-lucide="eye" class="w-3 h-3"></i> عرض الشهادة
                     </div>
                 </div>
-                 <div class="glass-card p-6 rounded-2xl border-t-4 border-t-blue-500 hover:shadow-blue-500/10 cursor-pointer group transition-all" onclick="openModal('IMG_5675.jpg', 'IBM Intro to AI')">
+                 <!-- IBM -->
+                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-blue-500 hover:shadow-blue-500/10 cursor-pointer group transition-all" onclick="openModal('IMG_5675.jpg', 'IBM Intro to AI')">
                     <div class="mb-4 text-blue-400"><i class="fas fa-laptop-code text-2xl"></i></div>
                     <h4 class="text-lg font-bold text-white mb-1" data-translate-key="cert3Title">Intro to AI</h4>
                     <p class="text-sm text-slate-400 mb-3" data-translate-key="cert3Issuer">IBM (Coursera)</p>
                     <span class="text-xs text-blue-400 group-hover:underline">عرض</span>
                 </div>
+                 <!-- Power BI -->
                  <div class="glass-card p-6 rounded-2xl border-t-4 border-t-yellow-500 hover:shadow-yellow-500/10 cursor-pointer group transition-all" onclick="openModal('CourseraPowerBi_page-0001.jpg', 'Power BI')">
                     <div class="mb-4 text-yellow-400"><i class="fas fa-chart-bar text-2xl"></i></div>
                     <h4 class="text-lg font-bold text-white mb-1" data-translate-key="cert4Title">Data Visualization</h4>
                     <p class="text-sm text-slate-400 mb-3" data-translate-key="cert4Issuer">Coursera</p>
                     <span class="text-xs text-yellow-400 group-hover:underline">عرض</span>
                 </div>
+                <!-- Excel -->
                 <div class="glass-card p-6 rounded-2xl border-t-4 border-t-green-500 hover:shadow-green-500/10 cursor-pointer group transition-all" onclick="openModal('CourseraEXCEL_page-0001.jpg', 'Excel Advanced')">
                     <div class="mb-4 text-green-400"><i class="fas fa-file-excel text-2xl"></i></div>
                     <h4 class="text-lg font-bold text-white mb-1" data-translate-key="cert5Title">Excel Advanced</h4>
@@ -615,6 +700,7 @@
              </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="py-24 text-center border-t border-slate-800/50">
             <div class="glass-card max-w-3xl mx-auto p-12 rounded-[3rem] relative overflow-hidden">
                 <div class="relative z-10">
@@ -638,12 +724,14 @@
             </div>
         </section>
 
+        <!-- Footer -->
         <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-800">
             <p data-translate-key="footerText">© 2025 - عبدالعزيز الثبيتي. جميع الحقوق محفوظة.</p>
         </footer>
 
     </main>
 
+    <!-- Scripts Logic -->
     <script>
         // تفعيل الأيقونات
         lucide.createIcons();
@@ -690,7 +778,7 @@
                 skillPython: "Python", skillML: "Machine Learning", skillDL: "Deep Learning",
                 skillLLM: "LLMs", skillHF: "Hugging Face", skillSQL: "SQL",
                 skillPowerBI: "Power BI", skillDA: "Data Analysis",
-                
+
                 // Soft Skills
                 softSkillsTitle: "Personal Competencies",
                 softSkillPS: "Problem Solving",
@@ -724,7 +812,13 @@
                 proj3Desc: "Recommendation system using Collaborative Filtering and Flask API.",
                 proj4Title: "Loan Status Prediction",
                 proj4Desc: "Classification models to evaluate loan applications.",
-                demoLink: "Demo", sourceLink: "Code",
+                projBallTrackTitle: "BallTrack System",
+                projBallTrackDesc: "A specialized application focused on high-accuracy ball tracking in football matches.",
+                proj2Title: "AI Plant Classifier",
+                proj2Desc: "Developed and trained a deep learning model to classify local plant images.",
+                proj5Title: "Fire Data Analysis",
+                proj5Desc: "Exploratory data analysis on forest fire data and regression models.",
+                demoLink: "Demo", sourceLink: "Code", comingSoon: "Coming Soon",
 
                 achievementsTitle: "Hackathons", achBadge2nd: "2nd Place",
                 ach1Title: "Inflow", ach1Desc: "An embedded finance platform for funding startups via SaaS platforms.",
@@ -795,7 +889,13 @@
                 proj3Desc: "نظام توصية شخصي للأفلام باستخدام Collaborative Filtering و Flask.",
                 proj4Title: "تنبؤ حالة القروض",
                 proj4Desc: "تطبيق نماذج تصنيف متعددة لتقييم طلبات القروض.",
-                demoLink: "فيديو", sourceLink: "الكود",
+                projBallTrackTitle: "BallTrack (تتبع الكرة)",
+                projBallTrackDesc: "تطبيق لتتبع حركة الكرة بدقة عالية في المباريات.",
+                proj2Title: "AI Image Classifier",
+                proj2Desc: "نموذج لتصنيف صور النباتات المحلية لأكثر من 30 فئة.",
+                proj5Title: "Fire Data Analysis",
+                proj5Desc: "تحليل استكشافي لبيانات حرائق الغابات وتطبيق نماذج الانحدار.",
+                demoLink: "فيديو", sourceLink: "الكود", comingSoon: "قريباً",
 
                 achievementsTitle: "إنجازات الهاكاثونات", achBadge2nd: "المركز الثاني",
                 ach1Title: "Inflow", ach1Desc: "منصة متكاملة تركز على مفهوم Embedded Finance، تتيح تمويل الشركات الناشئة مباشرة.",
@@ -809,7 +909,7 @@
                 
                 certsTitle: "المعسكرات والشهادات",
                 cert1Title: "معسكر علوم البيانات T5", cert1Issuer: "SDAIA",
-                cert2Title: "معسكر تطوير نماذج الذكاء الاصطناعي", cert2Issuer: "أكاديمية طويق",
+                cert2Title: "معسكر الذكاء الاصطناعي", cert2Issuer: "وأكاديمية طويق",
                 cert6Title: "Oracle AI Vector Search", cert6Issuer: "Oracle",
                 cert3Title: "مقدمة في الذكاء الاصطناعي", cert3Issuer: "IBM",
                 cert4Title: "تصور البيانات", cert4Issuer: "Coursera",
@@ -818,7 +918,7 @@
                 
                 contactTitle: "تواصل معي", contactDesc: "مهتم بمناقشة المشاريع أو الفرص؟ لا تتردد في التواصل!",
                 contactEmail: "البريد الإلكتروني", contactLinkedIn: "لينكدإن", contactGitHub: "GitHub",
-                footerText: "© 2025 - عبدالعزيز الثبيتي."
+                footerText: "2025 جميع الحقوق محفوظة."
             }
         };
 
